@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EBEBEB"
+    tools:context=".Cadastro_Cliente">
+
+    <View
+        android:id="@+id/menu"
+        android:layout_width="377dp"
+        android:layout_height="693dp"
+        android:background="@drawable/sombra"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.676"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/Reenviar"
+        android:layout_width="196dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="356dp"
+        android:backgroundTint="#3473D2"
+
+        android:text="Reenviar"
+        android:shadowColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/Confirmar"
+        app:layout_constraintEnd_toEndOf="@+id/menu"
+        app:layout_constraintStart_toStartOf="@+id/menu"
+        app:layout_constraintTop_toTopOf="@+id/menu"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/Confirmar"
+        android:layout_width="196dp"
+        android:layout_height="44dp"
+        android:backgroundTint="#3473D2"
+        android:text="Confirmar"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/menu"
+        app:layout_constraintStart_toStartOf="@+id/menu"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.618"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="416dp"
+        android:layout_height="36dp"
+        android:background="@drawable/cabecalhobaixo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/cabecalho"
+        android:layout_width="400dp"
+        android:layout_height="73dp"
+        android:background="@drawable/cabecalho"
+        app:layout_constraintBottom_toTopOf="@+id/menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.583"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="97dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cabecalho"
+        app:layout_constraintEnd_toEndOf="@+id/cabecalho"
+        app:layout_constraintStart_toStartOf="@+id/cabecalho"
+        app:layout_constraintTop_toTopOf="@+id/cabecalho"
+        app:srcCompat="@drawable/screenshot_29_removebg_preview" />
+
+    <ImageView
+        android:id="@+id/voltar"
+        android:layout_width="53dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/menu"
+        app:layout_constraintEnd_toEndOf="@+id/menu"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="@+id/menu"
+        app:layout_constraintTop_toTopOf="@+id/menu"
+        app:layout_constraintVertical_bias="0.033"
+        app:srcCompat="@drawable/voltar" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Recuperação de senha"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="@+id/menu"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toEndOf="@+id/voltar"
+        app:layout_constraintTop_toTopOf="@+id/menu"
+        tools:textColor="#3473D2" />
+
+    <TextView
+        android:id="@+id/codigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="528dp"
+        android:text="codigo de verificação"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/menu"
+        app:layout_constraintEnd_toEndOf="@+id/menu"
+        tools:ignore="MissingConstraints"
+        tools:textColor="@color/black" />
+
+    <View
+        android:id="@+id/digito6"
+        android:layout_width="50dp"
+        android:layout_height="77dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/sombra"
+        app:layout_constraintBottom_toBottomOf="@+id/menu"
+        app:layout_constraintEnd_toEndOf="@+id/menu"
+        app:layout_constraintTop_toTopOf="@+id/menu"
+        app:layout_constraintVertical_bias="0.334"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/digito1"
+        android:layout_width="50dp"
+        android:layout_height="77dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/sombra"
+        app:layout_constraintBottom_toBottomOf="@+id/menu"
+        app:layout_constraintEnd_toStartOf="@+id/digito2"
+        app:layout_constraintTop_toTopOf="@+id/menu"
+        app:layout_constraintVertical_bias="0.334"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/digito2"
+        android:layout_width="50dp"
+        android:layout_height="77dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/sombra"
+        app:layout_constraintBottom_toBottomOf="@+id/menu"
+        app:layout_constraintEnd_toStartOf="@+id/digito3"
+        app:layout_constraintTop_toTopOf="@+id/menu"
+        app:layout_constraintVertical_bias="0.334"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/digito3"
+        android:layout_width="50dp"
+        android:layout_height="77dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/sombra"
+        app:layout_constraintBottom_toBottomOf="@+id/menu"
+        app:layout_constraintEnd_toStartOf="@+id/digito4"
+        app:layout_constraintTop_toTopOf="@+id/menu"
+        app:layout_constraintVertical_bias="0.334"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/digito4"
+        android:layout_width="50dp"
+        android:layout_height="77dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/sombra"
+        app:layout_constraintBottom_toBottomOf="@+id/menu"
+        app:layout_constraintEnd_toStartOf="@+id/digito5"
+        app:layout_constraintTop_toTopOf="@+id/menu"
+        app:layout_constraintVertical_bias="0.334"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/digito5"
+        android:layout_width="50dp"
+        android:layout_height="77dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/sombra"
+        app:layout_constraintBottom_toBottomOf="@+id/menu"
+        app:layout_constraintEnd_toStartOf="@+id/digito6"
+        app:layout_constraintTop_toTopOf="@+id/menu"
+        app:layout_constraintVertical_bias="0.334"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/numero1"
+        android:layout_width="20dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="1"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/digito1"
+        app:layout_constraintEnd_toEndOf="@+id/digito1"
+        app:layout_constraintStart_toStartOf="@+id/digito1"
+        app:layout_constraintTop_toTopOf="@+id/digito1" />
+
+    <EditText
+        android:id="@+id/numero2"
+        android:layout_width="20dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="1"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/digito2"
+        app:layout_constraintEnd_toEndOf="@+id/digito2"
+        app:layout_constraintStart_toStartOf="@+id/digito2"
+        app:layout_constraintTop_toTopOf="@+id/digito2" />
+
+    <EditText
+        android:id="@+id/numero3"
+        android:layout_width="20dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="1"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/digito3"
+        app:layout_constraintEnd_toEndOf="@+id/digito3"
+        app:layout_constraintStart_toStartOf="@+id/digito3"
+        app:layout_constraintTop_toTopOf="@+id/digito3" />
+
+    <EditText
+        android:id="@+id/numero4"
+        android:layout_width="20dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="1"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/digito4"
+        app:layout_constraintEnd_toEndOf="@+id/digito4"
+        app:layout_constraintStart_toStartOf="@+id/digito4"
+        app:layout_constraintTop_toTopOf="@+id/digito4" />
+
+    <EditText
+        android:id="@+id/numero5"
+        android:layout_width="20dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="1"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/digito5"
+        app:layout_constraintEnd_toEndOf="@+id/digito5"
+        app:layout_constraintStart_toStartOf="@+id/digito5"
+        app:layout_constraintTop_toTopOf="@+id/digito5" />
+
+    <EditText
+        android:id="@+id/numero6"
+        android:layout_width="20dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="1"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/digito6"
+        app:layout_constraintEnd_toEndOf="@+id/digito6"
+        app:layout_constraintStart_toStartOf="@+id/digito6"
+        app:layout_constraintTop_toTopOf="@+id/digito6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
