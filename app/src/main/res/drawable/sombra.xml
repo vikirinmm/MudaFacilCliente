@@ -5,17 +5,15 @@
         <shape android:shape="rectangle">
             <solid android:color="#88B6B6B6" /> <!-- Cor da sombra -->
             <corners android:radius="42dp" /> <!-- Arredondamento da borda -->
-            <padding
-                android:bottom="2dp"
-                android:right="2dp" />
+
         </shape>
     </item>
     <!-- Conteúdo da View -->
     <item
-        android:left="3dp"
-        android:right="3dp"
-        android:top="3dp"
-        android:bottom="3dp">
+        android:left="4dp"
+        android:right="4dp"
+        android:top="4dp"
+        android:bottom="5dp">
     <shape android:shape="rectangle">
         <solid android:color="@color/white" />
         <corners android:radius="42dp" />
