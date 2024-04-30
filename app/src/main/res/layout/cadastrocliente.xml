@@ -145,5 +145,15 @@
         app:layout_constraintVertical_bias="0.033"
         app:srcCompat="@drawable/voltar" />
 
+    <ImageView
+        android:id="@+id/iconCar"
+        android:layout_width="105dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="@+id/view3"
+        app:srcCompat="@drawable/icon_perfil" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

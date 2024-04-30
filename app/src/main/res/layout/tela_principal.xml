@@ -94,19 +94,6 @@
         app:layout_constraintTop_toBottomOf="@+id/cabecalho"
         app:layout_constraintVertical_bias="0.47" />//
 
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="157dp"
-        android:layout_height="38dp"
-        android:backgroundTint="#3473D2"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="text"
-        android:textColorHint="@color/black"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="49dp" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
@@ -170,31 +157,43 @@
         app:layout_constraintTop_toTopOf="@+id/cabecalho"
         tools:ignore="MissingConstraints" />
 
+    <View
+        android:id="@+id/barra"
+        android:layout_width="4dp"
+        android:layout_height="41dp"
+        android:background="@drawable/cabecalho"
+        app:layout_constraintBottom_toBottomOf="@+id/pesquisa"
+        app:layout_constraintEnd_toStartOf="@+id/horario"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textopesquisa"
+        app:layout_constraintTop_toTopOf="@+id/pesquisa" />
+
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="69dp"
-        android:layout_height="74dp"
+        android:id="@+id/lupa"
+        android:layout_width="62dp"
+        android:layout_height="62dp"
         app:layout_constraintBottom_toBottomOf="@+id/cabecalho"
         app:layout_constraintEnd_toEndOf="@+id/cabecalho"
+        app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toEndOf="@+id/pesquisa"
         app:layout_constraintTop_toTopOf="@+id/cabecalho"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:layout_constraintVertical_bias="0.500"
+        app:srcCompat="@drawable/lupa" />
 
     <EditText
-        android:id="@+id/editTextText2"
-        android:layout_width="192dp"
+        android:id="@+id/textopesquisa"
+        android:layout_width="163dp"
         android:layout_height="41dp"
+        android:layout_marginStart="12dp"
         android:backgroundTint="#3473D2"
         android:ems="10"
         android:hint="Name"
         android:inputType="text"
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/pesquisa"
-        app:layout_constraintEnd_toEndOf="@+id/pesquisa"
-        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="@+id/pesquisa"
         app:layout_constraintTop_toTopOf="@+id/pesquisa"
-        app:layout_constraintVertical_bias="0.500"
+        app:layout_constraintVertical_bias="0.6"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -202,12 +201,89 @@
         android:layout_width="76dp"
         android:layout_height="69dp"
         app:layout_constraintBottom_toBottomOf="@+id/cabecalho"
-        app:layout_constraintEnd_toStartOf="@+id/editTextText2"
-        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintEnd_toStartOf="@+id/pesquisa"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/barrademenu" />
+
+    <TextView
+        android:id="@+id/lugar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lugar"
+        android:textColor="#3473D2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/segundo_recente"
+        app:layout_constraintEnd_toStartOf="@+id/endereco2"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="@+id/segundo_recente"
+        app:layout_constraintTop_toTopOf="@+id/segundo_recente"
+        app:layout_constraintVertical_bias="0.226" />
+
+    <TextView
+        android:id="@+id/endereco2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="endereço detalhado"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/segundo_recente"
+        app:layout_constraintEnd_toEndOf="@+id/segundo_recente"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="@+id/segundo_recente"
+        app:layout_constraintTop_toTopOf="@+id/segundo_recente"
+        app:layout_constraintVertical_bias="0.793" />
+
+    <TextView
+        android:id="@+id/lugar3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lugar"
+        android:textColor="#3473D2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/terceiro_recente"
+        app:layout_constraintEnd_toStartOf="@+id/endereco3"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="@+id/terceiro_recente"
+        app:layout_constraintTop_toTopOf="@+id/terceiro_recente"
+        app:layout_constraintVertical_bias="0.188" />
+
+    <TextView
+        android:id="@+id/endereco3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="endereço detalhado"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/terceiro_recente"
+        app:layout_constraintEnd_toEndOf="@+id/terceiro_recente"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="@+id/terceiro_recente"
+        app:layout_constraintTop_toTopOf="@+id/terceiro_recente"
+        app:layout_constraintVertical_bias="0.862" />
+
+    <View
+        android:id="@+id/barra"
+        android:layout_width="62dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/horario"
+        app:layout_constraintBottom_toBottomOf="@+id/pesquisa"
+        app:layout_constraintEnd_toEndOf="@+id/pesquisa"
+        app:layout_constraintTop_toTopOf="@+id/pesquisa"
+        tools:ignore="DuplicateIds" />
+
+    <TextView
+        android:id="@+id/horario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#3473D2"
+        android:text="horario"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/barra"
+        app:layout_constraintEnd_toEndOf="@+id/barra"
+        app:layout_constraintStart_toStartOf="@+id/barra"
+        app:layout_constraintTop_toTopOf="@+id/barra" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
