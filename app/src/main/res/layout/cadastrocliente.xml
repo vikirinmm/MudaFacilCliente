@@ -106,7 +106,7 @@
         tools:ignore="MissingConstraints" />
 
     <View
-        android:id="@+id/view3"
+        android:id="@+id/borda_perfil"
         android:layout_width="135dp"
         android:layout_height="130dp"
         android:background="@drawable/perfil"
@@ -149,10 +149,10 @@
         android:id="@+id/iconCar"
         android:layout_width="105dp"
         android:layout_height="100dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view3"
-        app:layout_constraintEnd_toEndOf="@+id/view3"
-        app:layout_constraintStart_toStartOf="@+id/view3"
-        app:layout_constraintTop_toTopOf="@+id/view3"
+        app:layout_constraintBottom_toBottomOf="@+id/borda_perfil"
+        app:layout_constraintEnd_toEndOf="@+id/borda_perfil"
+        app:layout_constraintStart_toStartOf="@+id/borda_perfil"
+        app:layout_constraintTop_toTopOf="@+id/borda_perfil"
         app:srcCompat="@drawable/icon_perfil" />
 
 
