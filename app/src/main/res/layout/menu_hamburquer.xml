@@ -37,11 +37,12 @@
         app:layout_constraintGuide_end="715dp" />
 
     <TextView
-        android:id="@+id/serviço"
+        android:id="@+id/servico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:text="Serviço"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,18 +53,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
+        android:textSize="20sp"
         android:text="Pagamentos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/serviço" />
+        app:layout_constraintTop_toBottomOf="@+id/servico" />
 
     <TextView
         android:id="@+id/editar_perfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="20sp"
         android:layout_marginTop="100dp"
-        android:text="Editar_Perfil"
+        android:text="Editar Perfil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,6 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
+        android:textSize="20sp"
         android:text="Sair"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
@@ -128,7 +132,7 @@
         android:layout_height="4dp"
         android:layout_marginBottom="50dp"
         android:background="@drawable/cabecalho"
-        app:layout_constraintBottom_toTopOf="@+id/serviço"
+        app:layout_constraintBottom_toTopOf="@+id/servico"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

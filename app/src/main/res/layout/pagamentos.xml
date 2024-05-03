@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EBEBEB">
+
+    <View
+        android:id="@+id/menu"
+        android:layout_width="377dp"
+        android:layout_height="693dp"
+        android:background="@drawable/sombra"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.671"
+        tools:ignore="MissingConstraints" />
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="416dp"
+        android:layout_height="36dp"
+        android:background="@drawable/cabecalhobaixo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/cabecalho"
+        android:layout_width="400dp"
+        android:layout_height="73dp"
+        android:background="@drawable/cabecalho"
+        app:layout_constraintBottom_toTopOf="@+id/menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.583"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="35dp" />
+
+    <ImageView
+        android:id="@+id/voltar_do_pagamento"
+        android:layout_width="68dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cabecalho"
+        app:layout_constraintStart_toStartOf="@+id/cabecalho"
+        app:layout_constraintTop_toTopOf="@+id/cabecalho"
+        app:srcCompat="@drawable/voltarbranco" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pagamentos"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="35dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cabecalho"
+        app:layout_constraintEnd_toEndOf="@+id/cabecalho"
+        app:layout_constraintStart_toStartOf="@+id/cabecalho"
+        app:layout_constraintTop_toTopOf="@+id/cabecalho" />
+
+    <ImageView
+        android:id="@+id/filtro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cabecalho"
+        app:layout_constraintEnd_toEndOf="@+id/cabecalho"
+        app:layout_constraintTop_toTopOf="@+id/cabecalho"
+        app:layout_constraintVertical_bias="0.419"
+        app:srcCompat="@drawable/filtro" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#3473D2"
+        android:text="Gerar relatorio"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/menu"
+        app:layout_constraintEnd_toEndOf="@+id/menu"
+        app:layout_constraintStart_toStartOf="@+id/menu" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
