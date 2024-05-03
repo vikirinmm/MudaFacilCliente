@@ -98,7 +98,17 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/menu"
         app:layout_constraintEnd_toEndOf="@+id/menu"
-        app:layout_constraintStart_toStartOf="@+id/menu" />
+        app:layout_constraintStart_toStartOf="@+id/menu"
+        app:layout_constraintTop_toBottomOf="@+id/lista_pagamentos" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lista_pagamentos"
+        android:layout_width="365dp"
+        android:layout_height="579dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/menu"
+        app:layout_constraintStart_toStartOf="@+id/menu"
+        app:layout_constraintTop_toTopOf="@+id/menu" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -43,11 +43,11 @@
             android:exported="false"
             />
         <activity
-            android:name=".Login"
+            android:name=".TelaPrincipal"
             android:exported="false"
             />
         <activity
-            android:name=".TelaPrincipal"
+            android:name=".Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
