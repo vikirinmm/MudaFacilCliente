@@ -81,8 +81,9 @@
         android:backgroundTint="#3473D2"
         android:ems="10"
         android:hint="E-mail"
-        android:textColor="@color/black"
+
         android:inputType="text"
+        android:textColor="@color/black"
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/menu"
         app:layout_constraintEnd_toEndOf="@+id/menu"
@@ -116,7 +117,9 @@
         app:layout_constraintStart_toEndOf="@+id/voltar"
         app:layout_constraintTop_toTopOf="@+id/menu"
         app:layout_constraintVertical_bias="0.14"
-        tools:textColor="#3473D2" />
+        tools:textColor="#3473D2"
+        android:textColor="#3473D2"
+        android:textColorHint="#3473D2"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

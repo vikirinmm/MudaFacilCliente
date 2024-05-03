@@ -9,6 +9,18 @@
     android:backgroundTint="#EBEBEB">
 
     <View
+        android:id="@+id/view3"
+        android:background="#EBEBEB"
+        android:backgroundTint="#EBEBEB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
         android:id="@+id/menu"
         android:layout_width="377dp"
         android:layout_height="693dp"
@@ -65,9 +77,9 @@
         android:backgroundTint="#3473D2"
         android:ems="10"
         android:hint="Name"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
         android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/menu"
         app:layout_constraintEnd_toEndOf="@+id/menu"
         app:layout_constraintHorizontal_bias="0.469"
@@ -85,8 +97,8 @@
         android:ems="10"
         android:hint="senha"
         android:inputType="text"
-        android:textColorHint="@color/black"
         android:textColor="@color/black"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/menu"
         app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="@+id/menu"
@@ -99,9 +111,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Esqueceu a senha"
-        android:textSize="20sp"
-        android:textColorHint="#3473D2"
         android:textColor="#3473D2"
+        android:textColorHint="#3473D2"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/menu"
         app:layout_constraintHorizontal_bias="0.148"
         app:layout_constraintStart_toStartOf="@+id/menu"
@@ -115,8 +127,8 @@
         android:layout_marginTop="36dp"
         android:backgroundTint="#3473D2"
         android:text="entrar"
-        android:textColorHint="@color/white"
         android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/menu"
         app:layout_constraintEnd_toEndOf="@+id/menu"
         app:layout_constraintHorizontal_bias="0.497"
@@ -132,6 +144,8 @@
         android:layout_marginTop="32dp"
         android:text="Não possui cadastro?"
         android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/menu"
         app:layout_constraintHorizontal_bias="0.223"
         app:layout_constraintStart_toStartOf="@+id/menu"
@@ -180,7 +194,8 @@
         app:layout_constraintEnd_toEndOf="@+id/borda_perfil"
         app:layout_constraintStart_toStartOf="@+id/borda_perfil"
         app:layout_constraintTop_toTopOf="@+id/borda_perfil"
-        app:srcCompat="@drawable/icon_perfil" />
+        app:srcCompat="@drawable/icon_perfil"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

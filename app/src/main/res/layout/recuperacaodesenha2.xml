@@ -106,6 +106,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:textColor="#3473D2"
+        android:textColorHint="#3473D2"
         android:text="Recuperação de senha"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="@+id/menu"
