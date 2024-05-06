@@ -8,31 +8,31 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
-public class PaymentsAdapter extends RecyclerView.Adapter<PaymentsAdapter.PaymentViewHolder> {
-    private List<Payment> paymentList;
+public class PagamantosAdapter extends RecyclerView.Adapter<PagamantosAdapter.PaymentViewHolder> {
+    private List<PagamentosModel> pagamentosModelList;
 
-    public PaymentsAdapter(List<Payment> paymentList) {
-        this.paymentList = paymentList;
+    public PagamantosAdapter(List<PagamentosModel> pagamentosModelList) {
+        this.pagamentosModelList = pagamentosModelList;
     }
 
     @NonNull
     @Override
     public PaymentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.payment_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.pagamentos_item, parent, false);
         return new PaymentViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull PaymentViewHolder holder, int position) {
-        Payment payment = paymentList.get(position);
-        holder.paymentAmountTextView.setText(payment.getAmount());
-        holder.paymentDateTextView.setText(payment.getDate());
-        holder.paymentDescriptionTextView.setText(payment.getDescription());
+        PagamentosModel pagamentosModel = pagamentosModelList.get(position);
+        holder.paymentAmountTextView.setText(pagamentosModel.getAmount());
+        holder.paymentDateTextView.setText(pagamentosModel.getDate());
+        holder.paymentDescriptionTextView.setText(pagamentosModel.getDescription());
     }
 
     @Override
     public int getItemCount() {
-        return paymentList.size();
+        return pagamentosModelList.size();
     }
 
     static class PaymentViewHolder extends RecyclerView.ViewHolder {

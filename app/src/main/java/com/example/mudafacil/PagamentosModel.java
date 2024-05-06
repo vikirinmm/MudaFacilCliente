@@ -1,11 +1,11 @@
 package com.example.mudafacil;
 
-public class Payment {
+public class PagamentosModel {
     private String amount;
     private String date;
     private String description;
 
-    public Payment(String amount, String date, String description) {
+    public PagamentosModel(String amount, String date, String description) {
         this.amount = amount;
         this.date = date;
         this.description = description;

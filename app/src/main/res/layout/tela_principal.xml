@@ -3,11 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
+    android:background="#C1C1C1"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main_content"
+        android:background="#C1C1C1"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -170,20 +172,20 @@
             app:layout_constraintHorizontal_bias="0.09"
             app:layout_constraintStart_toEndOf="@+id/pesquisa"
             app:layout_constraintTop_toTopOf="@+id/cabecalho"
-            app:layout_constraintVertical_bias="0.500"
+            app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/lupa" />
 
         <EditText
             android:id="@+id/textopesquisa"
             android:layout_width="163dp"
-            android:layout_height="41dp"
+            android:layout_height="48dp"
             android:layout_marginStart="12dp"
             android:backgroundTint="#3473D2"
             android:ems="10"
             android:hint="Name"
             android:inputType="text"
-            android:textColorHint="@color/black"
             android:textColor="@color/black"
+            android:textColorHint="@color/black"
             app:layout_constraintBottom_toBottomOf="@+id/pesquisa"
             app:layout_constraintStart_toStartOf="@+id/pesquisa"
             app:layout_constraintTop_toTopOf="@+id/pesquisa"
@@ -192,14 +194,14 @@
 
         <ImageView
             android:id="@+id/Barra_de_menu"
-            android:layout_width="76dp"
-            android:layout_height="69dp"
+            android:layout_width="68dp"
+            android:layout_height="56dp"
             app:layout_constraintBottom_toBottomOf="@+id/cabecalho"
             app:layout_constraintEnd_toStartOf="@+id/pesquisa"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintVertical_bias="0.89"
             app:srcCompat="@drawable/barrademenu" />
 
         <TextView
@@ -276,7 +278,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="horario"
-            android:textColor="#3473D2"
+            android:textColor="@color/azul"
             android:textSize="16dp"
             app:layout_constraintBottom_toBottomOf="@+id/barra"
             app:layout_constraintEnd_toEndOf="@+id/barra"
@@ -287,12 +289,23 @@
             android:id="@+id/mapView"
             android:layout_width="374dp"
             android:layout_height="350dp"
-            android:background="@drawable/borda"
+            android:background="@drawable/mapa"
             app:layout_constraintBottom_toTopOf="@+id/menu"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.486"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cabecalho"
+            app:layout_constraintVertical_bias="0.47" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="374dp"
+            android:layout_height="350dp"
+            android:background="@drawable/mapa_borda"
+            app:layout_constraintBottom_toBottomOf="@+id/mapView"
+            app:layout_constraintEnd_toEndOf="@+id/mapView"
+            app:layout_constraintStart_toStartOf="@+id/mapView"
+            app:layout_constraintTop_toTopOf="@+id/mapView"
             app:layout_constraintVertical_bias="0.47" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

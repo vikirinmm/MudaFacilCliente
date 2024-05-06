@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -18,7 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 public class Pagamentos extends AppCompatActivity {
     private RecyclerView paymentsRecyclerView;
-    private PaymentsAdapter paymentsAdapter;
+    private PagamantosAdapter pagamantosAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,22 +37,22 @@ public class Pagamentos extends AppCompatActivity {
         paymentsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // Exemplo de dados
-        ArrayList<Payment> payments = new ArrayList<>();
-        payments.add(new Payment("R$1200,00", "22/10/2023", "Aluguel do escritório"));
-        payments.add(new Payment("R$300,00", "15/10/2023", "Internet"));
-        payments.add(new Payment("R$150,00", "05/10/2023", "Água"));
-        payments.add(new Payment("R$1200,00", "22/10/2023", "Aluguel do escritório"));
-        payments.add(new Payment("R$300,00", "15/10/2023", "Internet"));
-        payments.add(new Payment("R$150,00", "05/10/2023", "Água"));
-        payments.add(new Payment("R$1200,00", "22/10/2023", "Aluguel do escritório"));
-        payments.add(new Payment("R$300,00", "15/10/2023", "Internet"));
-        payments.add(new Payment("R$150,00", "05/10/2023", "Água"));
-        payments.add(new Payment("R$1200,00", "22/10/2023", "Aluguel do escritório"));
-        payments.add(new Payment("R$300,00", "15/10/2023", "Internet"));
-        payments.add(new Payment("R$150,00", "05/10/2023", "Água"));
+        ArrayList<PagamentosModel> pagamentosModels = new ArrayList<>();
+        pagamentosModels.add(new PagamentosModel("R$1200,00", "22/10/2023", "Aluguel do escritório"));
+        pagamentosModels.add(new PagamentosModel("R$300,00", "15/10/2023", "Internet"));
+        pagamentosModels.add(new PagamentosModel("R$150,00", "05/10/2023", "Água"));
+        pagamentosModels.add(new PagamentosModel("R$1200,00", "22/10/2023", "Aluguel do escritório"));
+        pagamentosModels.add(new PagamentosModel("R$300,00", "15/10/2023", "Internet"));
+        pagamentosModels.add(new PagamentosModel("R$150,00", "05/10/2023", "Água"));
+        pagamentosModels.add(new PagamentosModel("R$1200,00", "22/10/2023", "Aluguel do escritório"));
+        pagamentosModels.add(new PagamentosModel("R$300,00", "15/10/2023", "Internet"));
+        pagamentosModels.add(new PagamentosModel("R$150,00", "05/10/2023", "Água"));
+        pagamentosModels.add(new PagamentosModel("R$1200,00", "22/10/2023", "Aluguel do escritório"));
+        pagamentosModels.add(new PagamentosModel("R$300,00", "15/10/2023", "Internet"));
+        pagamentosModels.add(new PagamentosModel("R$150,00", "05/10/2023", "Água"));
 
-        paymentsAdapter = new PaymentsAdapter(payments);
-        paymentsRecyclerView.setAdapter(paymentsAdapter);
+        pagamantosAdapter = new PagamantosAdapter(pagamentosModels);
+        paymentsRecyclerView.setAdapter(pagamantosAdapter);
 
     }
 
