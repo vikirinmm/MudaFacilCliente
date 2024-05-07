@@ -42,9 +42,9 @@ public class PagamantosAdapter extends RecyclerView.Adapter<PagamantosAdapter.Pa
 
         public PaymentViewHolder(@NonNull View itemView) {
             super(itemView);
-            paymentAmountTextView = itemView.findViewById(R.id.text_view_payment_amount);
-            paymentDateTextView = itemView.findViewById(R.id.text_view_payment_date);
-            paymentDescriptionTextView = itemView.findViewById(R.id.text_view_payment_description);
+            paymentAmountTextView = itemView.findViewById(R.id.valor);
+            paymentDateTextView = itemView.findViewById(R.id.data);
+            paymentDescriptionTextView = itemView.findViewById(R.id.discricao);
         }
     }
 }

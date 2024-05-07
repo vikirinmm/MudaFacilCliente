@@ -147,4 +147,6 @@
         android:text="Valor Máximo"
         app:layout_constraintBottom_toTopOf="@+id/seekBar2"
         app:layout_constraintEnd_toEndOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

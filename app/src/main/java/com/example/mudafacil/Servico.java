@@ -7,8 +7,14 @@ import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class Servico extends AppCompatActivity {
+    private RecyclerView listaservico;
+    private ServicoAdapter servicoAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +29,19 @@ public class Servico extends AppCompatActivity {
                 startActivity(main);
             }
         });
+
+
+        listaservico = findViewById(R.id.lista_servico);
+        listaservico.setLayoutManager(new LinearLayoutManager(this));
+
+        // Exemplo de dados
+        ArrayList<Servicomodel> servicomodels = new ArrayList<>();
+        servicomodels.add(new Servicomodel("ativo", "puc area 2", "R$1200,00","22/10/2023","ativo"));
+        servicomodels.add(new Servicomodel("não_ativo", "puc area 2", "R$1200,00","22/10/2023","nao_ativo"));
+
+
+        servicoAdapter = new ServicoAdapter(servicomodels);
+        listaservico.setAdapter(servicoAdapter);
 
     }
 }

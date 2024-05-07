@@ -75,7 +75,7 @@
         app:srcCompat="@drawable/voltarbranco" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/lista_servico"
         android:layout_width="336dp"
         android:layout_height="598dp"
         android:layout_marginBottom="24dp"
@@ -91,7 +91,7 @@
         android:layout_marginStart="20dp"
         android:background="@drawable/sombra"
         android:backgroundTint="@color/azul"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintBottom_toTopOf="@+id/lista_servico"
         app:layout_constraintStart_toStartOf="@+id/menu"
         app:layout_constraintTop_toTopOf="@+id/menu"
         app:layout_constraintVertical_bias="0.52" />
@@ -102,7 +102,7 @@
         android:layout_height="46dp"
         android:layout_marginStart="16dp"
         android:background="@drawable/sombra"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintBottom_toTopOf="@+id/lista_servico"
         app:layout_constraintStart_toEndOf="@+id/view5"
         app:layout_constraintTop_toTopOf="@+id/menu"
         app:layout_constraintVertical_bias="0.52" />

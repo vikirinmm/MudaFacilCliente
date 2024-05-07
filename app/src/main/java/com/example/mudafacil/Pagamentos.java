@@ -107,8 +107,7 @@ public class Pagamentos extends AppCompatActivity {
                 // Obtém o item selecionado
                 String selectedItem = parent.getItemAtPosition(position).toString();
 
-                // Exibe uma mensagem com o item selecionado
-                Toast.makeText(Pagamentos.this, "Item selecionado: " + selectedItem, Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
