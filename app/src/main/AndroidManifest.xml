@@ -43,7 +43,7 @@
             android:exported="false"
             />
         <activity
-            android:name=".TelaPrincipal"
+            android:name=".Opcao_Veiculos"
             android:exported="false"
             />
         <activity
@@ -52,6 +52,10 @@
             />
         <activity
             android:name=".EditarPerfil"
+            android:exported="false"
+            />
+        <activity
+            android:name=".TelaPrincipal"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

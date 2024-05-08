@@ -33,6 +33,17 @@ public class TelaPrincipal extends AppCompatActivity {
 
 
 
+        ImageView buscar = (ImageView) findViewById(R.id.lupa);
+        buscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Intent = new Intent(TelaPrincipal.this, Opcao_Veiculos.class);
+                startActivity(Intent);
+            }
+        });
+
+
+
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
