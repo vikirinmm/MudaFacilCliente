@@ -8,7 +8,7 @@
     android:background="@drawable/sombra"
     android:elevation="18dp"
     android:orientation="vertical"
-    android:visibility="visible">
+    android:visibility="invisible">
 
 
     <TextView

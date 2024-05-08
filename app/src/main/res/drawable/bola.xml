@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- border_background.xml -->
+<!-- border_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="22000000dp" /> <!-- Raio do arredondamento (em dp) -->
+    <!-- Define a largura da borda em dp -->
+    <stroke
+        android:width="5dp" android:color="#3473D2" >
+
+    </stroke>
+    <!-- Define a cor da borda -->
+    <!-- Define a cor do plano de fundo do EditText -->
+    <solid android:color="@color/azul" />
+</shape>

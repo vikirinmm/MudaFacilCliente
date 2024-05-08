@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EBEBEB">
+
+    <View
+        android:id="@+id/menu"
+        android:layout_width="377dp"
+        android:layout_height="750dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/sombra"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="416dp"
+        android:layout_height="36dp"
+        android:background="@drawable/cabecalhobaixo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/editar"
+        android:layout_width="196dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#3473D2"
+        android:text="Editar Perfil"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/menu"
+        app:layout_constraintEnd_toEndOf="@+id/menu"
+        app:layout_constraintStart_toStartOf="@+id/menu"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText6"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/borda_perfil"
+        android:layout_width="145dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bola"
+        app:layout_constraintEnd_toEndOf="@+id/menu"
+        app:layout_constraintStart_toStartOf="@+id/menu"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/voltar"
+        android:layout_width="63dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="22dp"
+        app:layout_constraintStart_toStartOf="@+id/menu"
+        app:layout_constraintTop_toTopOf="@+id/menu"
+        app:srcCompat="@drawable/voltar" />
+
+    <View
+        android:id="@+id/view5"
+        android:layout_width="115dp"
+        android:layout_height="110dp"
+        android:background="@drawable/perfilbranco"
+        app:layout_constraintBottom_toBottomOf="@+id/borda_perfil"
+        app:layout_constraintEnd_toEndOf="@+id/borda_perfil"
+        app:layout_constraintStart_toStartOf="@+id/borda_perfil"
+        app:layout_constraintTop_toTopOf="@+id/borda_perfil" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="85dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view5"
+        app:layout_constraintEnd_toEndOf="@+id/view5"
+        app:layout_constraintStart_toStartOf="@+id/view5"
+        app:layout_constraintTop_toTopOf="@+id/view5"
+        app:srcCompat="@drawable/perfil_branco" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="text"
+        android:backgroundTint="@color/azul"
+        android:text="Name completo"
+        app:layout_constraintEnd_toEndOf="@+id/menu"
+        app:layout_constraintStart_toStartOf="@+id/menu"
+        app:layout_constraintTop_toBottomOf="@+id/borda_perfil" />
+
+    <EditText
+        android:id="@+id/editTextText3"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="text"
+        android:backgroundTint="@color/azul"
+        android:text="Número de telefone"
+        app:layout_constraintEnd_toEndOf="@+id/menu"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/menu"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+
+    <EditText
+        android:id="@+id/editTextText4"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:backgroundTint="@color/azul"
+        android:inputType="text"
+        android:text="E-mail"
+        app:layout_constraintEnd_toEndOf="@+id/menu"
+        app:layout_constraintStart_toStartOf="@+id/menu"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+
+    <EditText
+        android:id="@+id/editTextText5"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="text"
+        android:backgroundTint="@color/azul"
+        android:text="Senha"
+        app:layout_constraintEnd_toEndOf="@+id/menu"
+        app:layout_constraintStart_toStartOf="@+id/menu"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+
+    <EditText
+        android:id="@+id/editTextText6"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="text"
+        android:backgroundTint="@color/azul"
+        android:text="Confirme a Senha"
+        app:layout_constraintEnd_toEndOf="@+id/menu"
+        app:layout_constraintStart_toStartOf="@+id/menu"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText5" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

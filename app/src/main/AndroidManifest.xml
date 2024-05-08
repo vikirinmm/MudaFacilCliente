@@ -39,7 +39,7 @@
             android:exported="false"
             />
         <activity
-            android:name=".Servico"
+            android:name=".Pagamentos"
             android:exported="false"
             />
         <activity
@@ -47,7 +47,11 @@
             android:exported="false"
             />
         <activity
-            android:name=".Pagamentos"
+            android:name=".Servico"
+            android:exported="false"
+            />
+        <activity
+            android:name=".EditarPerfil"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

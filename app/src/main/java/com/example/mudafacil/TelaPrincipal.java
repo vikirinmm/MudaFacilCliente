@@ -74,6 +74,18 @@ public class TelaPrincipal extends AppCompatActivity {
             }
         });
 
+        TextView editar = headerView.findViewById(R.id.editar_perfil);
+        editar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Implemente o logout ou fechamento da atividade
+                Intent logoutIntent = new Intent(TelaPrincipal.this, EditarPerfil.class); // Supondo que LoginActivity é sua tela de login
+                logoutIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(logoutIntent);
+            }
+        });
+
+
 
 
 
