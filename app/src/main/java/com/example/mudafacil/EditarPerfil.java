@@ -1,11 +1,13 @@
 package com.example.mudafacil;
 
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -37,30 +39,27 @@ public class EditarPerfil extends AppCompatActivity {
     }
 
     private void showConfirmationDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Confirmar Ação");
-        builder.setMessage("Você deseja continuar?");
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View customView = inflater.inflate(R.layout.confirmareditar, null);
 
-        // Botão para confirmar
-        builder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                // Código para o que acontecerá quando o usuário confirmar
-                Toast.makeText(EditarPerfil.this, "Ação confirmada!", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        // Botão para cancelar
-        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                // Código para o que acontecerá quando o usuário cancelar
-                dialogInterface.dismiss();
-            }
-        });
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.TransparentDialog); // Aplica o estilo transparente
+        builder.setView(customView);
 
         AlertDialog dialog = builder.create();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT)); // Adicional para garantir transparência
+
+        Button confirmButton = customView.findViewById(R.id.dialog_btn_confirm);
+        confirmButton.setOnClickListener(v -> {
+            Toast.makeText(EditarPerfil.this, "Ação confirmada!", Toast.LENGTH_SHORT).show();
+            dialog.dismiss();
+        });
+
+        Button cancelButton = customView.findViewById(R.id.dialog_btn_cancel);
+        cancelButton.setOnClickListener(v -> dialog.dismiss());
+
         dialog.show();
     }
+
+
 
 }

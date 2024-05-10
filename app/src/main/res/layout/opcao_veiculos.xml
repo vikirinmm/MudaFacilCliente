@@ -113,7 +113,7 @@
     </androidx.recyclerview.widget.RecyclerView>
 
     <include
-        layout="@layout/aviso"
+        layout="@layout/opcao_veiculos_hamburquer"
         android:layout_width="match_parent"
         android:layout_height="460dp"
         app:layout_constraintBottom_toBottomOf="parent"

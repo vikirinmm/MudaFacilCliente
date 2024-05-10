@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+
+    <View
+        android:id="@+id/view7"
+        android:layout_width="match_parent"
+        android:layout_height="295dp"
+        android:background="@drawable/sombra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dialog_message"
+        android:layout_width="240dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="Você deseja continuar?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/azul"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view6" />
+
+    <Button
+        android:id="@+id/dialog_btn_confirm"
+        android:layout_width="120dp"
+        android:layout_height="49dp"
+
+        android:layout_marginTop="20dp"
+        android:text="Confirmar"
+        app:layout_constraintEnd_toEndOf="@+id/dialog_message"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_message" />
+
+    <Button
+        android:id="@+id/dialog_btn_cancel"
+        android:layout_width="120dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="20dp"
+        android:text="Cancelar"
+        app:layout_constraintStart_toStartOf="@+id/dialog_message"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_message" />
+
+    <View
+        android:id="@+id/view6"
+        android:layout_width="280dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/cabecalho"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/view7"
+        app:layout_constraintStart_toStartOf="@+id/view7"
+        app:layout_constraintTop_toTopOf="@+id/view7" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
