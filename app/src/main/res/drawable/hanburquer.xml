@@ -4,7 +4,7 @@
     <item>
         <shape android:shape="rectangle">
             <solid android:color="#88B6B6B6" /> <!-- Cor da sombra -->
-            <corners android:radius="42dp" /> <!-- Arredondamento da borda -->
+            <corners android:topLeftRadius="42dp" android:topRightRadius="42dp" /> <!-- Arredondamento da borda -->
 
         </shape>
     </item>
@@ -16,7 +16,7 @@
         android:bottom="4dp">
     <shape android:shape="rectangle">
         <solid android:color="@color/white" />
-        <corners android:radius="42dp" />
+        <corners android:topLeftRadius="42dp" android:topRightRadius="42dp" />
     </shape>
     </item>
     </layer-list>

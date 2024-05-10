@@ -141,7 +141,7 @@ public class Pagamentos extends AppCompatActivity {
         });
         //hunburquer
 
-        //lista
+        //voltar
         ImageView voltar = (ImageView) findViewById(R.id.voltar_do_pagamento);
         voltar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -150,7 +150,9 @@ public class Pagamentos extends AppCompatActivity {
                 startActivity(main);
             }
         });
+        //voltar
 
+        //lista
         paymentsRecyclerView = findViewById(R.id.lista_pagamentos);
         paymentsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 

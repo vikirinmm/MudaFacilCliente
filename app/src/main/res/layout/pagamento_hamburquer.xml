@@ -5,10 +5,10 @@
     android:id="@+id/hp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/sombra"
+    android:background="@drawable/hanburquer"
     android:elevation="18dp"
     android:orientation="vertical"
-    android:visibility="invisible">
+    android:visibility="visible">
 
 
     <TextView
@@ -74,6 +74,7 @@
         android:layout_marginTop="25dp"
         android:background="@drawable/horario"
         android:gravity="center"
+        android:textColor="@color/black"
         android:text="Data Inicial"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/data" />
@@ -86,6 +87,7 @@
         android:background="@drawable/horario"
         android:gravity="center"
         android:text="Data Final"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/tipo_de_atividade"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnStartDate" />
@@ -136,6 +138,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="46dp"
         android:text="Valor Minimo"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/seekBar2"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -144,6 +147,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="45dp"
+        android:textColor="@color/black"
         android:text="Valor Máximo"
         app:layout_constraintBottom_toTopOf="@+id/seekBar2"
         app:layout_constraintEnd_toEndOf="parent" />
