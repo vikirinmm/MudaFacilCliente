@@ -1,29 +1,38 @@
 package com.example.mudafacil;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import com.google.android.material.navigation.NavigationView;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.material.navigation.NavigationView;
 
-public class TelaPrincipal extends AppCompatActivity {
+public class TelaPrincipal extends AppCompatActivity implements OnMapReadyCallback {
 
+    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private MapView mapView;
     private GoogleMap googleMap;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
+    private FusedLocationProviderClient locationClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,25 +40,27 @@ public class TelaPrincipal extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.tela_principal);
 
+        locationClient = LocationServices.getFusedLocationProviderClient(this);
+        mapView = findViewById(R.id.mapView);
+        mapView.onCreate(savedInstanceState);
+        mapView.getMapAsync(this);
 
-
-        ImageView buscar = (ImageView) findViewById(R.id.lupa);
-        buscar.setOnClickListener(new View.OnClickListener() {
+        setupNavigationView();
+View mapa = findViewById(R.id.view4);
+        mapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent Intent = new Intent(TelaPrincipal.this, Opcao_Veiculos.class);
-                startActivity(Intent);
+                // Implemente o logout ou fechamento da atividade
+                Intent logoutIntent = new Intent(TelaPrincipal.this, Mapa.class); // Supondo que LoginActivity é sua tela de login
+                startActivity(logoutIntent);
             }
         });
 
-
-
-
+        //hunburquer
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
 
-        View headerView = navigationView.getHeaderView(0); // Certifique-se de que o TextView 'sair' está no header ou ajuste conforme necessário
-
+        View headerView = navigationView.getHeaderView(0);
         // Configurando o TextView 'sair'
         TextView sairTextView = headerView.findViewById(R.id.sair);
         sairTextView.setOnClickListener(new View.OnClickListener() {
@@ -84,48 +95,72 @@ public class TelaPrincipal extends AppCompatActivity {
                 startActivity(logoutIntent);
             }
         });
+    }
 
-        TextView editar = headerView.findViewById(R.id.editar_perfil);
-        editar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Implemente o logout ou fechamento da atividade
-                Intent logoutIntent = new Intent(TelaPrincipal.this, EditarPerfil.class); // Supondo que LoginActivity é sua tela de login
-                logoutIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(logoutIntent);
+    private void setupNavigationView() {
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        ImageView menuButton = findViewById(R.id.Barra_de_menu);
+        menuButton.setOnClickListener(v -> toggleDrawer());
+    }
+
+    private void toggleDrawer() {
+        if (!drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.openDrawer(GravityCompat.START);
+        } else {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+    }
+    //hunburquer
+
+
+    @Override
+    public void onMapReady(GoogleMap map) {
+        googleMap = map;
+        enableMyLocation();
+    }
+
+    private void enableMyLocation() {
+        if (checkLocationPermission()) {
+            googleMap.setMyLocationEnabled(true);
+            getLastLocation();
+        } else {
+            requestLocationPermission();
+        }
+    }
+
+    private boolean checkLocationPermission() {
+        return ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED;
+    }
+
+    private void requestLocationPermission() {
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION},
+                LOCATION_PERMISSION_REQUEST_CODE);
+    }
+
+    private void getLastLocation() {
+        if (checkLocationPermission()) {
+            locationClient.getLastLocation()
+                    .addOnSuccessListener(this, location -> {
+                        if (location != null) {
+                            LatLng userLocation = new LatLng(location.getLatitude(), location.getLongitude());
+                            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 15));
+                        }
+                    });
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                enableMyLocation();
+            } else {
+                Toast.makeText(this, "Permissão negada.", Toast.LENGTH_SHORT).show();
             }
-        });
-
-
-
-
-
-
-        mapView = (MapView) findViewById(R.id.mapView);
-        mapView.onCreate(savedInstanceState);
-
-        mapView.getMapAsync(new OnMapReadyCallback() {
-            @Override
-            public void onMapReady(GoogleMap map) {
-                googleMap = map;
-                // Configurações adicionais do mapa aqui
-            }
-        });
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        ImageView menuButton =  findViewById(R.id.Barra_de_menu);
-
-        menuButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!drawer.isDrawerOpen(GravityCompat.START)) {
-                    drawer.openDrawer(GravityCompat.START);
-                } else {
-                    drawer.closeDrawer(GravityCompat.START);
-                }
-            }
-        });
-
+        }
     }
 
     @Override
@@ -136,8 +171,8 @@ public class TelaPrincipal extends AppCompatActivity {
 
     @Override
     protected void onPause() {
-        mapView.onPause();
         super.onPause();
+        mapView.onPause();
     }
 
     @Override
@@ -148,8 +183,6 @@ public class TelaPrincipal extends AppCompatActivity {
 
     @Override
     public void onLowMemory() {
-        super.onLowMemory();
         mapView.onLowMemory();
     }
-
 }

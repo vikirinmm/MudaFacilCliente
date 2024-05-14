@@ -59,7 +59,7 @@ public class Opcao_VeiculosAdapter extends RecyclerView.Adapter<Opcao_VeiculosAd
         builder.setView(dialogView);
 
         TextView message = dialogView.findViewById(R.id.dialog_message);
-        message.setText("Tem certeza que deseja este veículo: " + model.getVeiculo() + "?");
+        message.setText("Tem certeza que deseja este veículo: " + model.getVeiculo() + " de "+model.getValor()+"?");
 
         // Configurando botões
         Button btnYes = dialogView.findViewById(R.id.dialog_btn_yes);

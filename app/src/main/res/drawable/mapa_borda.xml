@@ -3,7 +3,7 @@
 <!-- border_background.xml -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-    <corners android:radius="30dp" /> <!-- Raio do arredondamento (em dp) -->
+    <corners android:radius="0dp" /> <!-- Raio do arredondamento (em dp) -->
     <!-- Define a largura da borda em dp -->
     <stroke
         android:width="3dp" android:color="#3473D2" >
