@@ -86,7 +86,7 @@ public class Pagamentos extends AppCompatActivity {
 
         // Lista de itens que serão exibidos no ComboBox
         List<String> items = new ArrayList<>();
-        items.add("Item 1");
+        items.add("Selecione");
         items.add("Item 2");
         items.add("Item 3");
         items.add("Item 4");
@@ -139,6 +139,7 @@ public class Pagamentos extends AppCompatActivity {
                 isMenuVisible = !isMenuVisible;
             }
         });
+
         //hunburquer
 
         //voltar

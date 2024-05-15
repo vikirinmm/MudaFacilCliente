@@ -1,163 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView2"
-        android:layout_width="0dp"
-        android:layout_height="552dp"
-        app:layout_constraintBottom_toTopOf="@+id/view9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <View
-        android:id="@+id/cabecalho"
-        android:layout_width="400dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="35dp"
-        android:background="@drawable/cabecalho"
-        app:layout_constraintEnd_toEndOf="@+id/mapView2"
-        app:layout_constraintStart_toStartOf="@+id/mapView2"
-        app:layout_constraintTop_toTopOf="@+id/mapView2"
-        tools:ignore="MissingConstraints" />
-
-    <View
-        android:id="@+id/view9"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="365dp"
-        android:background="@drawable/cabecalhobaixo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/mapView2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/mapView2" />
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="55dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/cabecalho"
-        app:layout_constraintStart_toStartOf="@+id/cabecalho"
-        app:layout_constraintTop_toTopOf="@+id/cabecalho"
-        app:srcCompat="@drawable/voltarbranco" />
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView2"
+            android:layout_width="0dp"
+            android:layout_height="552dp"
+            app:layout_constraintBottom_toTopOf="@+id/menu_azul"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <View
-        android:id="@+id/pesquisa"
-        android:layout_width="254dp"
-        android:layout_height="51dp"
-        android:background="@drawable/pesquisa"
-        app:layout_constraintBottom_toBottomOf="@+id/cabecalho"
-        app:layout_constraintEnd_toEndOf="@+id/cabecalho"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cabecalho"
-        tools:ignore="MissingConstraints" />
+        <View
+            android:id="@+id/cabecalho"
+            android:layout_width="400dp"
+            android:layout_height="73dp"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/cabecalho"
+            app:layout_constraintEnd_toEndOf="@+id/mapView2"
+            app:layout_constraintStart_toStartOf="@+id/mapView2"
+            app:layout_constraintTop_toTopOf="@+id/mapView2"
+            tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/textopesquisa"
-        android:layout_width="240dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#3473D2"
-        android:ems="10"
-        android:inputType="text"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/pesquisa"
-        app:layout_constraintEnd_toEndOf="@+id/pesquisa"
-        app:layout_constraintStart_toStartOf="@+id/pesquisa"
-        app:layout_constraintTop_toTopOf="@+id/pesquisa"
-        tools:ignore="MissingConstraints" />
+        <View
+            android:id="@+id/menu_azul"
+            android:layout_width="match_parent"
+            android:layout_height="365dp"
+            android:background="@drawable/cabecalhobaixo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/mapView2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/mapView2" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/voltar_mapa"
+            android:layout_width="55dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cabecalho"
+            app:layout_constraintStart_toStartOf="@+id/cabecalho"
+            app:layout_constraintTop_toTopOf="@+id/cabecalho"
+            app:srcCompat="@drawable/voltarbranco" />
+
+        <View
+            android:id="@+id/pesquisa"
+            android:layout_width="254dp"
+            android:layout_height="51dp"
+            android:background="@drawable/pesquisa"
+            app:layout_constraintBottom_toBottomOf="@+id/cabecalho"
+            app:layout_constraintEnd_toEndOf="@+id/cabecalho"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cabecalho"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/textopesquisa"
+            android:layout_width="240dp"
+            android:layout_height="48dp"
+            android:backgroundTint="#3473D2"
+            android:ems="10"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/pesquisa"
+            app:layout_constraintEnd_toEndOf="@+id/pesquisa"
+            app:layout_constraintStart_toStartOf="@+id/pesquisa"
+            app:layout_constraintTop_toTopOf="@+id/pesquisa"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cabecalho"
+            app:layout_constraintEnd_toEndOf="@+id/cabecalho"
+            app:layout_constraintTop_toTopOf="@+id/cabecalho"
+            app:layout_constraintVertical_bias="0.909"
+            app:srcCompat="@drawable/lupa" />
+
+        <View
+            android:id="@+id/menu"
+            android:layout_width="399dp"
+            android:layout_height="340dp"
+            android:background="@drawable/recentes"
+            app:layout_constraintBottom_toBottomOf="@+id/menu_azul"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/menu_azul"
+            app:layout_constraintTop_toTopOf="@+id/menu_azul" />
+
+        <View
+            android:id="@+id/bloco_menu1"
+            android:layout_width="375dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/recentes"
+            app:layout_constraintEnd_toEndOf="@+id/menu"
+            app:layout_constraintStart_toStartOf="@+id/menu_azul"
+            app:layout_constraintTop_toTopOf="@+id/menu" />
+
+        <View
+            android:id="@+id/bloco_menu2"
+            android:layout_width="375dp"
+            android:layout_height="105dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/recentes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/menu_azul"
+            app:layout_constraintTop_toBottomOf="@+id/bloco_menu1" />
+
+        <View
+            android:id="@+id/bloco_menu3"
+            android:layout_width="375dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/recentes"
+            app:layout_constraintEnd_toEndOf="@+id/menu_azul"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="@+id/menu"
+            app:layout_constraintTop_toBottomOf="@+id/bloco_menu2" />
+
+        <TextView
+            android:id="@+id/chamar"
+            android:layout_width="348dp"
+            android:layout_height="56dp"
+            android:gravity="center"
+            android:text="Chamar"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/bloco_menu1"
+            app:layout_constraintEnd_toEndOf="@+id/bloco_menu1"
+            app:layout_constraintStart_toStartOf="@+id/bloco_menu1"
+            app:layout_constraintTop_toTopOf="@+id/bloco_menu1" />
+
+        <TextView
+            android:id="@+id/endereco"
+            android:layout_width="352dp"
+            android:layout_height="80dp"
+            android:text="Endereço"
+            android:gravity="center"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/bloco_menu2"
+            app:layout_constraintEnd_toEndOf="@+id/bloco_menu2"
+            app:layout_constraintHorizontal_bias="0.478"
+            app:layout_constraintStart_toStartOf="@+id/bloco_menu2"
+            app:layout_constraintTop_toTopOf="@+id/bloco_menu2"
+            app:layout_constraintVertical_bias="0.52" />
+
+        <TextView
+            android:id="@+id/extras"
+            android:layout_width="354dp"
+            android:layout_height="88dp"
+            android:text="extras"
+            android:gravity="center"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/bloco_menu3"
+            app:layout_constraintEnd_toEndOf="@+id/bloco_menu3"
+            app:layout_constraintStart_toStartOf="@+id/bloco_menu3"
+            app:layout_constraintTop_toTopOf="@+id/bloco_menu3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/cabecalho"
-        app:layout_constraintEnd_toEndOf="@+id/cabecalho"
-        app:layout_constraintTop_toTopOf="@+id/cabecalho"
-        app:layout_constraintVertical_bias="0.909"
-        app:srcCompat="@drawable/lupa" />
-
-    <View
-        android:id="@+id/view10"
-        android:layout_width="399dp"
-        android:layout_height="340dp"
-        android:background="@drawable/recentes"
-        app:layout_constraintBottom_toBottomOf="@+id/view9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/view9"
-        app:layout_constraintTop_toTopOf="@+id/view9" />
-
-    <View
-        android:id="@+id/view11"
-        android:layout_width="375dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/recentes"
-        app:layout_constraintEnd_toEndOf="@+id/view10"
-        app:layout_constraintStart_toStartOf="@+id/view9"
-        app:layout_constraintTop_toTopOf="@+id/view10" />
-
-    <View
-        android:id="@+id/view12"
-        android:layout_width="375dp"
-        android:layout_height="105dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/recentes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/view9"
-        app:layout_constraintTop_toBottomOf="@+id/view11" />
-
-    <View
-        android:id="@+id/view13"
-        android:layout_width="375dp"
-        android:layout_height="110dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/recentes"
-        app:layout_constraintEnd_toEndOf="@+id/view9"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="@+id/view10"
-        app:layout_constraintTop_toBottomOf="@+id/view12" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="348dp"
-        android:layout_height="56dp"
-        android:gravity="center"
-        android:text="Chamar"
-        app:layout_constraintBottom_toBottomOf="@+id/view11"
-        app:layout_constraintEnd_toEndOf="@+id/view11"
-        app:layout_constraintStart_toStartOf="@+id/view11"
-        app:layout_constraintTop_toTopOf="@+id/view11" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="352dp"
-        android:layout_height="80dp"
-        android:text="Endereço"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="@+id/view12"
-        app:layout_constraintEnd_toEndOf="@+id/view12"
-        app:layout_constraintHorizontal_bias="0.478"
-        app:layout_constraintStart_toStartOf="@+id/view12"
-        app:layout_constraintTop_toTopOf="@+id/view12"
-        app:layout_constraintVertical_bias="0.52" />
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="354dp"
-        android:layout_height="88dp"
-        android:text="TextView"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="@+id/view13"
-        app:layout_constraintEnd_toEndOf="@+id/view13"
-        app:layout_constraintStart_toStartOf="@+id/view13"
-        app:layout_constraintTop_toTopOf="@+id/view13" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu" />
+</androidx.drawerlayout.widget.DrawerLayout>

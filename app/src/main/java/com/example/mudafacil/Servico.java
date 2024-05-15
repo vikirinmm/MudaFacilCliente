@@ -1,6 +1,7 @@
 package com.example.mudafacil;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,6 +21,8 @@ public class Servico extends AppCompatActivity {
     private ServicoAdapter servicoAdapter;
     private ArrayList<Servicomodel> allServicoModels;
     private ArrayList<Servicomodel> filteredServicoModels;
+    private TextView ativo;
+    private TextView nao_ativo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +44,18 @@ public class Servico extends AppCompatActivity {
         allServicoModels.add(new Servicomodel("ativo", "puc area 2", "R$1200,00","22/10/2023","ativo"));
         allServicoModels.add(new Servicomodel("não_ativo", "puc area 2", "R$1200,00","22/10/2023","nao_ativo"));
 
-        TextView ativo = findViewById(R.id.ativos);
-        TextView nao_ativo = findViewById(R.id.inativos);
+        ativo = findViewById(R.id.ativos);
+        nao_ativo = findViewById(R.id.inativos);
 
-        ativo.setOnClickListener(v -> updateList("ativo"));
-        nao_ativo.setOnClickListener(v -> updateList("nao_ativo"));
+        ativo.setOnClickListener(v -> {
+            updateList("ativo");
+            changeTextViewBackgrounds(ativo, nao_ativo);
+        });
+
+        nao_ativo.setOnClickListener(v -> {
+            updateList("nao_ativo");
+            changeTextViewBackgrounds(nao_ativo, ativo);
+        });
 
         filteredServicoModels = new ArrayList<>(allServicoModels); // Start with all items visible
         servicoAdapter = new ServicoAdapter(filteredServicoModels);
@@ -64,5 +74,13 @@ public class Servico extends AppCompatActivity {
                     .collect(Collectors.toList()));
         }
         servicoAdapter.notifyDataSetChanged(); // Notify the adapter to update the view
+    }
+
+    private void changeTextViewBackgrounds(TextView selectedTextView, TextView unselectedTextView) {
+        selectedTextView.setBackgroundResource(R.drawable.botao_azul); // Change to selected background
+        unselectedTextView.setBackgroundResource(R.drawable.recentes); // Change to unselected background
+
+        selectedTextView.setTextColor(getResources().getColor(R.color.white)); // Change to selected text color
+        unselectedTextView.setTextColor(getResources().getColor(R.color.azul)); // Change to unselected text color
     }
 }

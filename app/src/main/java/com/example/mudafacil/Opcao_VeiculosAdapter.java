@@ -1,6 +1,7 @@
 package com.example.mudafacil;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -59,25 +60,30 @@ public class Opcao_VeiculosAdapter extends RecyclerView.Adapter<Opcao_VeiculosAd
         builder.setView(dialogView);
 
         TextView message = dialogView.findViewById(R.id.dialog_message);
-        message.setText("Tem certeza que deseja este veículo: " + model.getVeiculo() + " de "+model.getValor()+"?");
+        message.setText("Tem certeza que deseja este veículo: " + model.getVeiculo() + " de " + model.getValor() + "?");
+
+        // Criar o AlertDialog fora do escopo do OnClickListener
+        AlertDialog dialog = builder.create();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT)); // Assegura a transparência
 
         // Configurando botões
         Button btnYes = dialogView.findViewById(R.id.dialog_btn_yes);
         btnYes.setOnClickListener(v -> {
             // Ação para "Sim"
-            // Por exemplo, fazer algo com o modelo ou fechar o diálogo
+            Intent intent = new Intent(context, Mapa_trajeto.class); // Substitua NovaTela pelo nome da sua nova atividade
+            intent.putExtra("veiculo", model.getVeiculo());
+            context.startActivity(intent);
+            dialog.dismiss(); // Fechar o diálogo após a ação
         });
 
         Button btnNo = dialogView.findViewById(R.id.dialog_btn_no);
         btnNo.setOnClickListener(v -> {
             // Ação para "Não"
+            dialog.dismiss(); // Fechar o diálogo
         });
 
-        AlertDialog dialog = builder.create();
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT)); // Assegura a transparência
         dialog.show();
     }
-
 
     static class Opcao_VeiculosViewHolder extends RecyclerView.ViewHolder {
         TextView tempo, capacidade, valor, veiculo;

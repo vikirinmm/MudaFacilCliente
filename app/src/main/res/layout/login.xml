@@ -96,7 +96,7 @@
         android:backgroundTint="#3473D2"
         android:ems="10"
         android:hint="senha"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/menu"
