@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="#EBEBEB"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EBEBEB"
     tools:context=".Cadastro_Cliente">
 
     <View
@@ -61,31 +61,28 @@
         android:id="@+id/Namecompleto"
         android:layout_width="310dp"
         android:layout_height="70dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="18dp"
         android:backgroundTint="#3473D2"
         android:ems="10"
         android:hint="Name completo"
         android:inputType="text"
-        android:textColorHint="@color/black"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/menu"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/menu"
-        app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="@+id/menu"
-        app:layout_constraintTop_toTopOf="@+id/menu"
-        app:layout_constraintVertical_bias="0.287"
+        app:layout_constraintTop_toBottomOf="@+id/borda_perfil"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/Numerodetelefone"
         android:layout_width="310dp"
         android:layout_height="70dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="18dp"
         android:backgroundTint="#3473D2"
         android:ems="10"
-        android:textColor="@color/black"
         android:hint="Numero de telefone"
         android:inputType="number"
+        android:textColor="@color/black"
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/menu"
         app:layout_constraintStart_toStartOf="@+id/menu"
@@ -96,43 +93,39 @@
         android:id="@+id/cadastra"
         android:layout_width="196dp"
         android:layout_height="44dp"
-        android:layout_marginBottom="52dp"
         android:backgroundTint="#3473D2"
         android:text="cadastra"
-        android:textColorHint="@color/white"
         android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/menu"
         app:layout_constraintEnd_toEndOf="@+id/menu"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="@+id/menu"
-        app:layout_constraintTop_toBottomOf="@+id/email"
-        app:layout_constraintVertical_bias="0.713"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText8"
         tools:ignore="MissingConstraints" />
 
     <View
         android:id="@+id/borda_perfil"
         android:layout_width="135dp"
         android:layout_height="130dp"
+        android:layout_marginTop="25dp"
+
         android:background="@drawable/perfil"
-        app:layout_constraintBottom_toTopOf="@+id/Namecompleto"
         app:layout_constraintEnd_toEndOf="@+id/menu"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="@+id/menu"
         app:layout_constraintTop_toTopOf="@+id/menu"
-        app:layout_constraintVertical_bias="0.407"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/email"
         android:layout_width="310dp"
         android:layout_height="70dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="18dp"
         android:backgroundTint="#3473D2"
         android:ems="10"
         android:hint="E-mail"
         android:inputType="text"
-        android:textColorHint="@color/black"
         android:textColor="@color/black"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/menu"
         app:layout_constraintStart_toStartOf="@+id/menu"
         app:layout_constraintTop_toBottomOf="@+id/Numerodetelefone"
@@ -159,6 +152,36 @@
         app:layout_constraintStart_toStartOf="@+id/borda_perfil"
         app:layout_constraintTop_toTopOf="@+id/borda_perfil"
         app:srcCompat="@drawable/icon_perfil" />
+
+    <EditText
+        android:id="@+id/editTextText7"
+        android:layout_width="310dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="18dp"
+        android:backgroundTint="#3473D2"
+        android:ems="10"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:hint="Senha"
+        app:layout_constraintEnd_toEndOf="@+id/menu"
+        app:layout_constraintStart_toStartOf="@+id/menu"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
+
+    <EditText
+        android:id="@+id/editTextText8"
+        android:layout_width="310dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="18dp"
+        android:backgroundTint="#3473D2"
+        android:ems="10"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:inputType="text"
+        android:hint="Confirmar senha"
+        app:layout_constraintEnd_toEndOf="@+id/menu"
+        app:layout_constraintStart_toStartOf="@+id/menu"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText7" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
