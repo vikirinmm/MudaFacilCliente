@@ -1,6 +1,8 @@
 package com.example.mudafacil;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +19,7 @@ import java.util.List;
 public class Opcao_VeiculosAdapter extends RecyclerView.Adapter<Opcao_VeiculosAdapter.Opcao_VeiculosViewHolder> {
     private List<Opcao_VeiculosModel> opcao_veiculosModelList;
     private Context context;
+    private Dialog dialog;
 
     // Constructor que recebe a lista de veículos e o contexto
     public Opcao_VeiculosAdapter(List<Opcao_VeiculosModel> opcao_veiculosModelList, Context context) {
@@ -59,25 +62,27 @@ public class Opcao_VeiculosAdapter extends RecyclerView.Adapter<Opcao_VeiculosAd
         builder.setView(dialogView);
 
         TextView message = dialogView.findViewById(R.id.dialog_message);
-        message.setText("Tem certeza que deseja este veículo: " + model.getVeiculo() + " de "+model.getValor()+"?");
+        message.setText("Tem certeza que deseja este veículo: " + model.getVeiculo() + " de " + model.getValor() + "?");
 
         // Configurando botões
         Button btnYes = dialogView.findViewById(R.id.dialog_btn_yes);
         btnYes.setOnClickListener(v -> {
             // Ação para "Sim"
-            // Por exemplo, fazer algo com o modelo ou fechar o diálogo
+            Intent intent = new Intent(context, Mapa_trajeto.class); // Substitua NovaTela pelo nome da sua nova atividade
+            intent.putExtra("veiculo", model.getVeiculo());
+            context.startActivity(intent);
         });
 
         Button btnNo = dialogView.findViewById(R.id.dialog_btn_no);
         btnNo.setOnClickListener(v -> {
             // Ação para "Não"
+            dialog.dismiss();
         });
 
         AlertDialog dialog = builder.create();
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT)); // Assegura a transparência
         dialog.show();
     }
-
 
     static class Opcao_VeiculosViewHolder extends RecyclerView.ViewHolder {
         TextView tempo, capacidade, valor, veiculo;

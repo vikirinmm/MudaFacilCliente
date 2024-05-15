@@ -84,51 +84,30 @@
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="@+id/menu" />
 
-    <View
-        android:id="@+id/fundo_ativo"
-        android:layout_width="160dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="20dp"
-        android:background="@drawable/sombra"
-        android:backgroundTint="@color/azul"
-        app:layout_constraintBottom_toTopOf="@+id/lista_servico"
-        app:layout_constraintStart_toStartOf="@+id/menu"
-        app:layout_constraintTop_toTopOf="@+id/menu"
-        app:layout_constraintVertical_bias="0.52" />
-
-    <View
-        android:id="@+id/fundo_nao_ativo"
-        android:layout_width="160dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="16dp"
-        android:background="@drawable/sombra"
-        app:layout_constraintBottom_toTopOf="@+id/lista_servico"
-        app:layout_constraintStart_toEndOf="@+id/fundo_ativo"
-        app:layout_constraintTop_toTopOf="@+id/menu"
-        app:layout_constraintVertical_bias="0.52" />
-
     <TextView
         android:id="@+id/ativos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="160dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/recentes"
+        android:gravity="center"
         android:text="Ativos"
-        android:textColor="@color/white"
+        android:textColor="@color/azul"
         android:textSize="23dp"
-        app:layout_constraintBottom_toBottomOf="@+id/fundo_ativo"
-        app:layout_constraintEnd_toEndOf="@+id/fundo_ativo"
-        app:layout_constraintStart_toStartOf="@+id/fundo_ativo"
-        app:layout_constraintTop_toTopOf="@+id/fundo_ativo" />
+        app:layout_constraintBottom_toTopOf="@+id/lista_servico"
+        app:layout_constraintStart_toStartOf="@+id/lista_servico" />
 
     <TextView
         android:id="@+id/inativos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="160dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/recentes"
+        android:gravity="center"
         android:text="Inativos"
         android:textColor="@color/azul"
         android:textSize="23dp"
-        app:layout_constraintBottom_toBottomOf="@+id/fundo_nao_ativo"
-        app:layout_constraintEnd_toEndOf="@+id/fundo_nao_ativo"
-        app:layout_constraintStart_toStartOf="@+id/fundo_nao_ativo"
-        app:layout_constraintTop_toTopOf="@+id/fundo_nao_ativo" />
+        app:layout_constraintBottom_toTopOf="@+id/lista_servico"
+        app:layout_constraintEnd_toEndOf="@+id/lista_servico" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

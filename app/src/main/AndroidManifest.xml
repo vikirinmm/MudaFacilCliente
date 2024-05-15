@@ -48,10 +48,13 @@
             android:name=".EditarPerfil"
             android:exported="false" />
         <activity
+            android:name=".TelaPrincipal"
+            android:exported="false" />
+        <activity
             android:name=".Mapa"
             android:exported="false" />
         <activity
-            android:name=".TelaPrincipal"
+            android:name=".Mapa_trajeto"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

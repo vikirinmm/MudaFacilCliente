@@ -7,8 +7,8 @@
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView2"
-        android:layout_width="0dp"
-        android:layout_height="552dp"
+        android:layout_width="match_parent"
+        android:layout_height="648dp"
         app:layout_constraintBottom_toTopOf="@+id/menu_azul"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -30,7 +30,7 @@
     <View
         android:id="@+id/menu_azul"
         android:layout_width="match_parent"
-        android:layout_height="365dp"
+        android:layout_height="264dp"
         android:background="@drawable/cabecalhobaixo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/mapView2"
@@ -38,7 +38,7 @@
         app:layout_constraintStart_toStartOf="@+id/mapView2" />
 
     <ImageView
-        android:id="@+id/voltar_mapa"
+        android:id="@+id/voltar_mapa_trajeto"
         android:layout_width="55dp"
         android:layout_height="53dp"
         android:layout_marginStart="8dp"
@@ -86,8 +86,8 @@
 
     <View
         android:id="@+id/menu"
-        android:layout_width="399dp"
-        android:layout_height="340dp"
+        android:layout_width="392dp"
+        android:layout_height="227dp"
         android:background="@drawable/recentes"
         app:layout_constraintBottom_toBottomOf="@+id/menu_azul"
         app:layout_constraintEnd_toEndOf="parent"
@@ -114,23 +114,13 @@
         app:layout_constraintStart_toStartOf="@+id/menu_azul"
         app:layout_constraintTop_toBottomOf="@+id/bloco_menu1" />
 
-    <View
-        android:id="@+id/bloco_menu3"
-        android:layout_width="375dp"
-        android:layout_height="110dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/recentes"
-        app:layout_constraintEnd_toEndOf="@+id/menu_azul"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="@+id/menu"
-        app:layout_constraintTop_toBottomOf="@+id/bloco_menu2" />
-
     <TextView
-        android:id="@+id/chamar"
+        android:id="@+id/cancelarpedido"
         android:layout_width="348dp"
         android:layout_height="56dp"
         android:gravity="center"
-        android:text="Chamar"
+        android:text="cancelar"
+        android:textSize="20sp"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/bloco_menu1"
         app:layout_constraintEnd_toEndOf="@+id/bloco_menu1"
@@ -150,17 +140,5 @@
         app:layout_constraintStart_toStartOf="@+id/bloco_menu2"
         app:layout_constraintTop_toTopOf="@+id/bloco_menu2"
         app:layout_constraintVertical_bias="0.52" />
-
-    <TextView
-        android:id="@+id/extras"
-        android:layout_width="354dp"
-        android:layout_height="88dp"
-        android:text="extras"
-        android:gravity="center"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/bloco_menu3"
-        app:layout_constraintEnd_toEndOf="@+id/bloco_menu3"
-        app:layout_constraintStart_toStartOf="@+id/bloco_menu3"
-        app:layout_constraintTop_toTopOf="@+id/bloco_menu3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

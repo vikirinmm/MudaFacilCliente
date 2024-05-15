@@ -15,6 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -25,6 +27,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
+
 public class TelaPrincipal extends AppCompatActivity implements OnMapReadyCallback {
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
@@ -34,11 +38,57 @@ public class TelaPrincipal extends AppCompatActivity implements OnMapReadyCallba
     private NavigationView navigationView;
     private FusedLocationProviderClient locationClient;
 
+
+    private RecyclerView tela_principalRecyclerView;
+    private  Tela_Principal_Adapter tela_principal_Adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.tela_principal);
+
+
+
+        ImageView pesquisar = findViewById(R.id.lupa);
+
+        pesquisar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent logoutIntent = new Intent(TelaPrincipal.this, Mapa.class); // Supondo que LoginActivity é sua tela de login
+                startActivity(logoutIntent);
+            }
+        });
+
+
+        //lista
+        tela_principalRecyclerView = findViewById(R.id.lista_recentes);
+        tela_principalRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        // Exemplo de dados
+        ArrayList<Tela_Principal_Model> tela_principalModel = new ArrayList<>();
+        tela_principalModel.add(new Tela_Principal_Model("Lugar", "Endereço detalhado"));
+        tela_principalModel.add(new Tela_Principal_Model("Lugar", "Endereço detalhado"));
+        tela_principalModel.add(new Tela_Principal_Model("Lugar", "Endereço detalhado"));
+        tela_principalModel.add(new Tela_Principal_Model("Lugar", "Endereço detalhado"));
+        tela_principalModel.add(new Tela_Principal_Model("Lugar", "Endereço detalhado"));
+        tela_principalModel.add(new Tela_Principal_Model("Lugar", "Endereço detalhado"));
+        tela_principalModel.add(new Tela_Principal_Model("Lugar", "Endereço detalhado"));
+        tela_principalModel.add(new Tela_Principal_Model("Lugar", "Endereço detalhado"));
+
+
+        tela_principal_Adapter = new Tela_Principal_Adapter(tela_principalModel);
+        tela_principalRecyclerView.setAdapter(tela_principal_Adapter);
+        //lista
+
+
+
+
+
+
+
+
+
+
 
         locationClient = LocationServices.getFusedLocationProviderClient(this);
         mapView = findViewById(R.id.mapView);
@@ -46,7 +96,7 @@ public class TelaPrincipal extends AppCompatActivity implements OnMapReadyCallba
         mapView.getMapAsync(this);
 
         setupNavigationView();
-View mapa = findViewById(R.id.view4);
+        View mapa = findViewById(R.id.view4);
         mapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

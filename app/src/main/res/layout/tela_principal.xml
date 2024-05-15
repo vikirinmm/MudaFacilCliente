@@ -27,41 +27,6 @@
             tools:ignore="MissingConstraints" />
 
         <View
-            android:id="@+id/primerio_recente"
-            android:layout_width="340dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="52dp"
-            android:background="@drawable/recentes"
-            app:layout_constraintEnd_toEndOf="@+id/menu"
-            app:layout_constraintStart_toStartOf="@+id/menu"
-            app:layout_constraintTop_toTopOf="@+id/menu"
-            tools:ignore="MissingConstraints" />
-
-        <View
-            android:id="@+id/segundo_recente"
-            android:layout_width="340dp"
-            android:layout_height="80dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/recentes"
-            app:layout_constraintBottom_toTopOf="@+id/terceiro_recente"
-            app:layout_constraintEnd_toEndOf="@+id/menu"
-            app:layout_constraintStart_toStartOf="@+id/menu"
-            app:layout_constraintTop_toBottomOf="@+id/primerio_recente"
-            app:layout_constraintVertical_bias="1.0"
-            tools:ignore="MissingConstraints" />
-
-        <View
-            android:id="@+id/terceiro_recente"
-            android:layout_width="340dp"
-            android:layout_height="80dp"
-            android:layout_marginBottom="28dp"
-            android:background="@drawable/recentes"
-            app:layout_constraintBottom_toBottomOf="@+id/menu"
-            app:layout_constraintEnd_toEndOf="@+id/menu"
-            app:layout_constraintStart_toStartOf="@+id/menu"
-            tools:ignore="MissingConstraints" />
-
-        <View
             android:id="@+id/view"
             android:layout_width="416dp"
             android:layout_height="36dp"
@@ -98,47 +63,13 @@
             android:id="@+id/recentes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
             android:text="Recentes"
             android:textColor="#3473D2"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/primerio_recente"
             app:layout_constraintEnd_toEndOf="@+id/menu"
-            app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="@+id/menu"
             app:layout_constraintTop_toTopOf="@+id/menu"
-            app:layout_constraintVertical_bias="0.75"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/discricao"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lugar"
-            android:textColor="#3473D2"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/primerio_recente"
-            app:layout_constraintEnd_toStartOf="@+id/endereco"
-            app:layout_constraintHorizontal_bias="0.509"
-            app:layout_constraintStart_toStartOf="@+id/primerio_recente"
-            app:layout_constraintTop_toTopOf="@+id/primerio_recente"
-            app:layout_constraintVertical_bias="0.188"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/endereco"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="endereço detalhado"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/primerio_recente"
-            app:layout_constraintEnd_toEndOf="@+id/primerio_recente"
-            app:layout_constraintHorizontal_bias="0.49"
-            app:layout_constraintStart_toStartOf="@+id/primerio_recente"
-            app:layout_constraintTop_toTopOf="@+id/primerio_recente"
-            app:layout_constraintVertical_bias="0.803"
             tools:ignore="MissingConstraints" />
 
         <View
@@ -188,64 +119,6 @@
             app:layout_constraintTop_toTopOf="@+id/cabecalho"
             app:srcCompat="@drawable/barrademenu" />
 
-        <TextView
-            android:id="@+id/lugar2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lugar"
-            android:textColor="#3473D2"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/segundo_recente"
-            app:layout_constraintEnd_toStartOf="@+id/endereco2"
-            app:layout_constraintHorizontal_bias="0.521"
-            app:layout_constraintStart_toStartOf="@+id/segundo_recente"
-            app:layout_constraintTop_toTopOf="@+id/segundo_recente"
-            app:layout_constraintVertical_bias="0.226" />
-
-        <TextView
-            android:id="@+id/endereco2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="endereço detalhado"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/segundo_recente"
-            app:layout_constraintEnd_toEndOf="@+id/segundo_recente"
-            app:layout_constraintHorizontal_bias="0.489"
-            app:layout_constraintStart_toStartOf="@+id/segundo_recente"
-            app:layout_constraintTop_toTopOf="@+id/segundo_recente"
-            app:layout_constraintVertical_bias="0.793" />
-
-        <TextView
-            android:id="@+id/lugar3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lugar"
-            android:textColor="#3473D2"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/terceiro_recente"
-            app:layout_constraintEnd_toStartOf="@+id/endereco3"
-            app:layout_constraintHorizontal_bias="0.521"
-            app:layout_constraintStart_toStartOf="@+id/terceiro_recente"
-            app:layout_constraintTop_toTopOf="@+id/terceiro_recente"
-            app:layout_constraintVertical_bias="0.188" />
-
-        <TextView
-            android:id="@+id/endereco3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="endereço detalhado"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/terceiro_recente"
-            app:layout_constraintEnd_toEndOf="@+id/terceiro_recente"
-            app:layout_constraintHorizontal_bias="0.489"
-            app:layout_constraintStart_toStartOf="@+id/terceiro_recente"
-            app:layout_constraintTop_toTopOf="@+id/terceiro_recente"
-            app:layout_constraintVertical_bias="0.862" />
-
         <com.google.android.gms.maps.MapView
             android:id="@+id/mapView"
             android:layout_width="374dp"
@@ -268,6 +141,15 @@
             app:layout_constraintStart_toStartOf="@+id/mapView"
             app:layout_constraintTop_toTopOf="@+id/mapView"
             app:layout_constraintVertical_bias="0.47" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lista_recentes"
+            android:layout_width="350dp"
+            android:layout_height="264dp"
+            android:layout_marginTop="14dp"
+            app:layout_constraintEnd_toEndOf="@+id/menu"
+            app:layout_constraintStart_toStartOf="@+id/menu"
+            app:layout_constraintTop_toBottomOf="@+id/recentes" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
@@ -276,5 +158,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/menu_hamburquer" />
+
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

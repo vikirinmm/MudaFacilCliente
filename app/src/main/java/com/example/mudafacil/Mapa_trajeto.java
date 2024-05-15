@@ -4,14 +4,18 @@ package com.example.mudafacil;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -25,7 +29,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.material.navigation.NavigationView;
 
-public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
+public class Mapa_trajeto extends AppCompatActivity implements OnMapReadyCallback {
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private MapView mapView;
     private GoogleMap googleMap;
@@ -35,7 +39,7 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.mapa);
+        setContentView(R.layout.mapa_trajeto);
 
         locationClient = LocationServices.getFusedLocationProviderClient(this);
         mapView = findViewById(R.id.mapView2);
@@ -44,29 +48,51 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
 
 
         //voltar
-        ImageView voltar = (ImageView) findViewById(R.id.voltar_mapa);
+        ImageView voltar = (ImageView) findViewById(R.id.voltar_mapa_trajeto);
         voltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent main = new Intent(Mapa.this, TelaPrincipal.class);
+                Intent main = new Intent(Mapa_trajeto.this, TelaPrincipal.class);
                 startActivity(main);
             }
         });
         //voltar
 
-        //voltar
-        TextView veiculos = (TextView) findViewById(R.id.chamar);
-        veiculos.setOnClickListener(new View.OnClickListener() {
+
+
+        TextView myButton = findViewById(R.id.cancelarpedido);
+        myButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent main = new Intent(Mapa.this, Opcao_Veiculos.class);
-                startActivity(main);
+            public void onClick(View view) {
+                showConfirmationDialog();
             }
         });
-        //voltar
-
 
     }
+
+
+    private void showConfirmationDialog() {
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View customView = inflater.inflate(R.layout.confirmarcancelamento, null);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.TransparentDialog); // Aplica o estilo transparente
+        builder.setView(customView);
+
+        AlertDialog dialog = builder.create();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT)); // Adicional para garantir transparência
+
+        Button confirmButton = customView.findViewById(R.id.confirmar);
+        confirmButton.setOnClickListener(v -> {
+            Toast.makeText(Mapa_trajeto.this, "Ação confirmada!", Toast.LENGTH_SHORT).show();
+            dialog.dismiss();
+        });
+
+        Button cancelButton = customView.findViewById(R.id.cancelar);
+        cancelButton.setOnClickListener(v -> dialog.dismiss());
+
+        dialog.show();
+    }
+
 
     @Override
     public void onMapReady(GoogleMap map) {
