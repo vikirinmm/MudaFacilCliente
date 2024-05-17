@@ -46,58 +46,33 @@ public class TelaPrincipal extends AppCompatActivity implements OnMapReadyCallba
     private FusedLocationProviderClient locationClient;
     private PopupWindow popupWindow;
     private RecyclerView tela_principalRecyclerView;
-    private  Tela_Principal_Adapter tela_principal_Adapter;
+    private Tela_Principal_Adapter tela_principal_Adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.tela_principal);
 
-
-
-
-
-
         ImageView pesquisar = findViewById(R.id.lupa);
-
         pesquisar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent logoutIntent = new Intent(TelaPrincipal.this, Mapa.class); // Supondo que LoginActivity é sua tela de login
+                Intent logoutIntent = new Intent(TelaPrincipal.this, Mapa.class);
                 startActivity(logoutIntent);
             }
         });
 
-
-        //lista
         tela_principalRecyclerView = findViewById(R.id.lista_recentes);
         tela_principalRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Exemplo de dados
         ArrayList<Tela_Principal_Model> tela_principalModel = new ArrayList<>();
-        tela_principalModel.add(new Tela_Principal_Model("Lugar", "Endereço detalhado"));
-        tela_principalModel.add(new Tela_Principal_Model("Lugar", "Endereço detalhado"));
-        tela_principalModel.add(new Tela_Principal_Model("Lugar", "Endereço detalhado"));
-        tela_principalModel.add(new Tela_Principal_Model("Lugar", "Endereço detalhado"));
-        tela_principalModel.add(new Tela_Principal_Model("Lugar", "Endereço detalhado"));
-        tela_principalModel.add(new Tela_Principal_Model("Lugar", "Endereço detalhado"));
-        tela_principalModel.add(new Tela_Principal_Model("Lugar", "Endereço detalhado"));
-        tela_principalModel.add(new Tela_Principal_Model("Lugar", "Endereço detalhado"));
-
+        for (int i = 0; i < 8; i++) {
+            tela_principalModel.add(new Tela_Principal_Model("Lugar", "Endereço detalhado"));
+        }
 
         tela_principal_Adapter = new Tela_Principal_Adapter(tela_principalModel);
         tela_principalRecyclerView.setAdapter(tela_principal_Adapter);
-        //lista
-
-
-
-
-
-
-
-
-
-
 
         locationClient = LocationServices.getFusedLocationProviderClient(this);
         mapView = findViewById(R.id.mapView);
@@ -105,31 +80,29 @@ public class TelaPrincipal extends AppCompatActivity implements OnMapReadyCallba
         mapView.getMapAsync(this);
 
         setupNavigationView();
+
         View mapa = findViewById(R.id.view4);
         mapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Implemente o logout ou fechamento da atividade
-                Intent logoutIntent = new Intent(TelaPrincipal.this, Mapa.class); // Supondo que LoginActivity é sua tela de login
+                Intent logoutIntent = new Intent(TelaPrincipal.this, Mapa.class);
                 startActivity(logoutIntent);
             }
         });
 
-        //hunburquer
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
 
         View headerView = navigationView.getHeaderView(0);
-        // Configurando o TextView 'sair'
+
         TextView sairTextView = headerView.findViewById(R.id.sair);
         sairTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Implemente o logout ou fechamento da atividade
-                Intent logoutIntent = new Intent(TelaPrincipal.this, Login.class); // Supondo que LoginActivity é sua tela de login
+                Intent logoutIntent = new Intent(TelaPrincipal.this, Login.class);
                 logoutIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(logoutIntent);
-                finish(); // Encerra a atividade atual
+                finish();
             }
         });
 
@@ -137,8 +110,7 @@ public class TelaPrincipal extends AppCompatActivity implements OnMapReadyCallba
         pagamento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Implemente o logout ou fechamento da atividade
-                Intent logoutIntent = new Intent(TelaPrincipal.this, Pagamentos.class); // Supondo que LoginActivity é sua tela de login
+                Intent logoutIntent = new Intent(TelaPrincipal.this, Pagamentos.class);
                 logoutIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(logoutIntent);
             }
@@ -148,15 +120,21 @@ public class TelaPrincipal extends AppCompatActivity implements OnMapReadyCallba
         sevirco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Implemente o logout ou fechamento da atividade
-                Intent logoutIntent = new Intent(TelaPrincipal.this, Servico.class); // Supondo que LoginActivity é sua tela de login
+                Intent logoutIntent = new Intent(TelaPrincipal.this, Servico.class);
                 logoutIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(logoutIntent);
             }
         });
 
-
-
+        TextView editarPerfil = headerView.findViewById(R.id.editar_perfil);
+        editarPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent logoutIntent = new Intent(TelaPrincipal.this, EditarPerfil.class);
+                logoutIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(logoutIntent);
+            }
+        });
 
         EditText textopesquisa = findViewById(R.id.textopesquisa);
         textopesquisa.addTextChangedListener(new TextWatcher() {
@@ -180,44 +158,30 @@ public class TelaPrincipal extends AppCompatActivity implements OnMapReadyCallba
     }
 
     private void showPopupWindow() {
-        // Inflar o layout personalizado
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         View popupView = inflater.inflate(R.layout.menu_suspenso, null);
 
-        // Criar o PopupWindow
         popupWindow = new PopupWindow(popupView, DrawerLayout.LayoutParams.MATCH_PARENT, DrawerLayout.LayoutParams.WRAP_CONTENT, true);
 
-        // Configurar PopupWindow para não focável e permitir toque fora dela
         popupWindow.setFocusable(false);
         popupWindow.setOutsideTouchable(true);
 
-        // Exibir o PopupWindow abaixo do cabeçalho
         View cabecalho = findViewById(R.id.cabecalho);
         int[] location = new int[2];
         cabecalho.getLocationOnScreen(location);
         int yOffset = location[1] + cabecalho.getHeight() - 20;
 
-        // Adicionar um deslocamento para garantir que o popup apareça abaixo do cabeçalho
-        yOffset += 10; // Ajuste este valor conforme necessário para espaçar o popup do cabeçalho
+        yOffset += 10;
 
         popupWindow.showAtLocation(cabecalho, Gravity.TOP | Gravity.START, 0, yOffset);
 
-        // Configurar o RecyclerView
         RecyclerView recyclerView = popupView.findViewById(R.id.listapersquisa);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Exemplo de dados para a lista
         List<PesquisaItem> pesquisaItems = new ArrayList<>();
-        pesquisaItems.add(new PesquisaItem("Item 1"));
-        pesquisaItems.add(new PesquisaItem("Item 2"));
-        pesquisaItems.add(new PesquisaItem("Item 3"));
-        pesquisaItems.add(new PesquisaItem("Item 1"));
-        pesquisaItems.add(new PesquisaItem("Item 2"));
-        pesquisaItems.add(new PesquisaItem("Item 3"));
-        pesquisaItems.add(new PesquisaItem("Item 1"));
-        pesquisaItems.add(new PesquisaItem("Item 2"));
-        pesquisaItems.add(new PesquisaItem("Item 3"));
-
+        for (int i = 1; i <= 9; i++) {
+            pesquisaItems.add(new PesquisaItem("Item " + i));
+        }
 
         PesquisaAdapter adapter = new PesquisaAdapter(pesquisaItems);
         recyclerView.setAdapter(adapter);
@@ -237,8 +201,6 @@ public class TelaPrincipal extends AppCompatActivity implements OnMapReadyCallba
             drawerLayout.closeDrawer(GravityCompat.START);
         }
     }
-    //hunburquer
-
 
     @Override
     public void onMapReady(GoogleMap map) {

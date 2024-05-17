@@ -22,19 +22,19 @@
 
         <activity
             android:name=".Recuperacao_de_senha_3"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Recuperacao_de_senha_2"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Recuperacao_de_senha_1"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Cadastro_Cliente"
             android:exported="false" />
         <activity
-            android:name=".Login"
-            android:exported="false" />
+            android:name=".TelaPrincipal"
+            android:exported="true" />
         <activity
             android:name=".Pagamentos"
             android:exported="false" />
@@ -43,18 +43,18 @@
             android:exported="false" />
         <activity
             android:name=".Servico"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".EditarPerfil"
             android:exported="false" />
         <activity
-            android:name=".TelaPrincipal"
-            android:exported="false" />
+            android:name=".Mapa"
+            android:exported="true" />
         <activity
             android:name=".Mapa_trajeto"
-            android:exported="false" />
+            android:exported="true" />
         <activity
-            android:name=".Mapa"
+            android:name=".Login"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
