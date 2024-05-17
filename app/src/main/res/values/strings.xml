@@ -9,4 +9,5 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="google_maps_key" translatable="false">AIzaSyDyiYidbmdA3G4E2cu-q1kZGd9dxZG0HGs</string>
 </resources>
