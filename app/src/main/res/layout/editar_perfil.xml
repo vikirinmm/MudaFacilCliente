@@ -43,7 +43,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/menu"
         app:layout_constraintEnd_toEndOf="@+id/menu"
         app:layout_constraintStart_toStartOf="@+id/menu"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText6"
+        app:layout_constraintTop_toBottomOf="@+id/comfirmarsenha"
         tools:ignore="MissingConstraints" />
 
     <View
@@ -134,7 +134,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
 
     <EditText
-        android:id="@+id/editTextText5"
+        android:id="@+id/senha"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_marginTop="20dp"
@@ -148,8 +148,18 @@
         app:layout_constraintStart_toStartOf="@+id/menu"
         app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
 
+    <ImageView
+        android:id="@+id/olho1"
+        android:layout_width="50dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/senha"
+        app:layout_constraintTop_toTopOf="@+id/senha"
+        app:srcCompat="@drawable/visualizar_senha" />
+
     <EditText
-        android:id="@+id/editTextText6"
+        android:id="@+id/comfirmarsenha"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_marginTop="20dp"
@@ -162,7 +172,17 @@
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/menu"
         app:layout_constraintStart_toStartOf="@+id/menu"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText5" />
+        app:layout_constraintTop_toBottomOf="@+id/senha" />
+
+    <ImageView
+        android:id="@+id/olho2"
+        android:layout_width="50dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/comfirmarsenha"
+        app:layout_constraintTop_toTopOf="@+id/comfirmarsenha"
+        app:srcCompat="@drawable/visualizar_senha" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

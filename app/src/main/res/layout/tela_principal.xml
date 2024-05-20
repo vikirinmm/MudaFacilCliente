@@ -156,8 +156,11 @@
         android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="@layout/menu_hamburquer" />
-
+        android:background="#F1F1F1"
+        app:headerLayout="@layout/menu_hamburquer"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+    </com.google.android.material.navigation.NavigationView>
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

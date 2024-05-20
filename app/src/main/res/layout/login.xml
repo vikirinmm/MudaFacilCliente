@@ -187,7 +187,7 @@
         app:layout_constraintGuide_begin="35dp" />
 
     <ImageView
-        android:id="@+id/iconlog"
+        android:id="@+id/perfil"
         android:layout_width="105dp"
         android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="@+id/borda_perfil"
@@ -196,6 +196,16 @@
         app:layout_constraintTop_toTopOf="@+id/borda_perfil"
         app:srcCompat="@drawable/icon_perfil"
         />
+
+    <ImageView
+        android:id="@+id/olho"
+        android:layout_width="50dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/senha"
+        app:layout_constraintTop_toTopOf="@+id/senha"
+        app:srcCompat="@drawable/visualizar_senha" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
