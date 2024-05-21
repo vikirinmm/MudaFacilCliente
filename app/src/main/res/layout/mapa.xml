@@ -9,12 +9,12 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:background="#C1C1C1"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#C1C1C1">
 
         <com.google.android.gms.maps.MapView
             android:id="@+id/mapView2"
-            android:layout_width="395dp"
+            android:layout_width="375dp"
             android:layout_height="382dp"
             app:layout_constraintBottom_toTopOf="@+id/menu_azul"
             app:layout_constraintEnd_toEndOf="parent"
@@ -39,8 +39,7 @@
             android:background="@drawable/cabecalhobaixo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/mapView2" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/voltar_mapa"
@@ -91,29 +90,29 @@
 
         <View
             android:id="@+id/menu"
-            android:layout_width="399dp"
+            android:layout_width="375dp"
             android:layout_height="340dp"
             android:background="@drawable/recentes"
             app:layout_constraintBottom_toBottomOf="@+id/menu_azul"
             app:layout_constraintEnd_toEndOf="@+id/menu_azul"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/menu_azul"
             app:layout_constraintTop_toTopOf="@+id/menu_azul"
-            app:layout_constraintVertical_bias="0.36" />
+            tools:layout_editor_absoluteX="13dp"
+            tools:layout_editor_absoluteY="535dp" />
 
         <View
             android:id="@+id/bloco_menu1"
-            android:layout_width="375dp"
+            android:layout_width="350dp"
             android:layout_height="80dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/recentes"
             app:layout_constraintEnd_toEndOf="@+id/menu"
-            app:layout_constraintStart_toStartOf="@+id/menu_azul"
+            app:layout_constraintStart_toStartOf="@+id/menu"
             app:layout_constraintTop_toTopOf="@+id/menu" />
 
         <View
             android:id="@+id/bloco_menu2"
-            android:layout_width="375dp"
+            android:layout_width="350dp"
             android:layout_height="105dp"
             android:layout_marginTop="12dp"
             android:background="@drawable/recentes"
@@ -123,18 +122,18 @@
 
         <View
             android:id="@+id/bloco_menu3"
-            android:layout_width="375dp"
+            android:layout_width="350dp"
             android:layout_height="110dp"
             android:layout_marginTop="12dp"
             android:background="@drawable/recentes"
-            app:layout_constraintEnd_toEndOf="@+id/menu_azul"
+            app:layout_constraintEnd_toEndOf="@+id/menu"
             app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="@+id/menu"
             app:layout_constraintTop_toBottomOf="@+id/bloco_menu2" />
 
         <TextView
             android:id="@+id/chamar"
-            android:layout_width="348dp"
+            android:layout_width="340dp"
             android:layout_height="56dp"
             android:gravity="center"
             android:text="Chamar"
@@ -146,7 +145,7 @@
 
         <TextView
             android:id="@+id/endereco"
-            android:layout_width="352dp"
+            android:layout_width="340dp"
             android:layout_height="80dp"
             android:gravity="center"
             android:text="Endereço"
@@ -160,7 +159,7 @@
 
         <TextView
             android:id="@+id/extras"
-            android:layout_width="354dp"
+            android:layout_width="340dp"
             android:layout_height="88dp"
             android:gravity="center"
             android:text="extras"
@@ -172,7 +171,7 @@
 
         <View
             android:id="@+id/view11"
-            android:layout_width="395dp"
+            android:layout_width="375dp"
             android:layout_height="382dp"
             android:background="@drawable/mapa_borda"
             app:layout_constraintStart_toStartOf="@+id/mapView2"
