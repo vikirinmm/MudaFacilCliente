@@ -78,14 +78,14 @@
             tools:ignore="MissingConstraints" />
 
         <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:id="@+id/lupa"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
             app:layout_constraintBottom_toBottomOf="@+id/cabecalho"
             app:layout_constraintEnd_toEndOf="@+id/cabecalho"
+            app:layout_constraintStart_toEndOf="@+id/pesquisa"
             app:layout_constraintTop_toTopOf="@+id/cabecalho"
-            app:layout_constraintVertical_bias="0.909"
+            app:layout_constraintVertical_bias="0.864"
             app:srcCompat="@drawable/lupa" />
 
         <View

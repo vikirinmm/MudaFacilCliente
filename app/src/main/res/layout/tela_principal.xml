@@ -18,38 +18,32 @@
             android:layout_width="376dp"
             android:layout_height="350dp"
             android:background="@drawable/sombra"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/view"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.542"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.916"
+            app:layout_constraintTop_toBottomOf="@+id/mapView"
             tools:ignore="MissingConstraints" />
 
         <View
             android:id="@+id/view"
             android:layout_width="416dp"
-            android:layout_height="36dp"
+            android:layout_height="46dp"
             android:background="@drawable/cabecalhobaixo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
             tools:ignore="MissingConstraints" />
 
         <View
             android:id="@+id/cabecalho"
             android:layout_width="400dp"
             android:layout_height="73dp"
+            android:layout_marginTop="35dp"
             android:background="@drawable/cabecalho"
-            app:layout_constraintBottom_toTopOf="@+id/menu"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.454"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline"
-            app:layout_constraintVertical_bias="0.009"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
         <androidx.constraintlayout.widget.Guideline
@@ -91,6 +85,7 @@
             app:layout_constraintEnd_toEndOf="@+id/cabecalho"
             app:layout_constraintStart_toEndOf="@+id/pesquisa"
             app:layout_constraintTop_toTopOf="@+id/cabecalho"
+            app:layout_constraintVertical_bias="0.864"
             app:srcCompat="@drawable/lupa" />
 
         <EditText
@@ -114,32 +109,29 @@
             android:layout_height="56dp"
             app:layout_constraintBottom_toBottomOf="@+id/cabecalho"
             app:layout_constraintEnd_toStartOf="@+id/pesquisa"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/cabecalho"
             app:layout_constraintTop_toTopOf="@+id/cabecalho"
+            app:layout_constraintVertical_bias="0.764"
             app:srcCompat="@drawable/barrademenu" />
 
         <com.google.android.gms.maps.MapView
             android:id="@+id/mapView"
             android:layout_width="374dp"
             android:layout_height="350dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/mapa"
-            app:layout_constraintBottom_toTopOf="@+id/menu"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.486"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cabecalho"
-            app:layout_constraintVertical_bias="0.47" />
+            app:layout_constraintTop_toBottomOf="@+id/cabecalho" />
 
         <View
             android:id="@+id/view4"
-            android:layout_width="374dp"
-            android:layout_height="350dp"
+            android:layout_width="374sp"
+            android:layout_height="350sp"
             android:background="@drawable/mapa_borda"
             app:layout_constraintBottom_toBottomOf="@+id/mapView"
-            app:layout_constraintEnd_toEndOf="@+id/mapView"
-            app:layout_constraintStart_toStartOf="@+id/mapView"
-            app:layout_constraintTop_toTopOf="@+id/mapView"
-            app:layout_constraintVertical_bias="0.47" />
+            app:layout_constraintStart_toStartOf="@+id/mapView" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/lista_recentes"

@@ -13,13 +13,11 @@
         android:layout_width="377dp"
         android:layout_height="693dp"
         android:background="@drawable/sombra"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.671"
+        app:layout_constraintTop_toBottomOf="@+id/cabecalho"
         tools:ignore="MissingConstraints" />
-
 
 
     <EditText
@@ -43,27 +41,23 @@
     <View
         android:id="@+id/view"
         android:layout_width="416dp"
-        android:layout_height="36dp"
+        android:layout_height="46dp"
         android:background="@drawable/cabecalhobaixo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
     <View
         android:id="@+id/cabecalho"
         android:layout_width="400dp"
         android:layout_height="73dp"
+        android:layout_marginTop="35dp"
         android:background="@drawable/cabecalho"
-        app:layout_constraintBottom_toTopOf="@+id/menu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.583"
         tools:ignore="MissingConstraints" />
 
     <ImageView

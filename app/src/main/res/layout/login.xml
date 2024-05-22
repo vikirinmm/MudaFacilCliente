@@ -10,11 +10,11 @@
 
     <View
         android:id="@+id/view3"
-        android:background="#EBEBEB"
-        android:backgroundTint="#EBEBEB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
+        android:background="#EBEBEB"
+        android:backgroundTint="#EBEBEB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,11 +25,10 @@
         android:layout_width="377dp"
         android:layout_height="693dp"
         android:background="@drawable/sombra"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.671"
+        app:layout_constraintTop_toBottomOf="@+id/cabecalho"
         tools:ignore="MissingConstraints" />
 
     <View
@@ -39,23 +38,19 @@
         android:background="@drawable/cabecalhobaixo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
     <View
         android:id="@+id/cabecalho"
         android:layout_width="400dp"
         android:layout_height="73dp"
+        android:layout_marginTop="35dp"
         android:background="@drawable/cabecalho"
-        app:layout_constraintBottom_toTopOf="@+id/menu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.590"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -143,9 +138,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Não possui cadastro?"
-        android:textSize="20sp"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/menu"
         app:layout_constraintHorizontal_bias="0.223"
         app:layout_constraintStart_toStartOf="@+id/menu"
@@ -179,13 +174,6 @@
         app:layout_constraintVertical_bias="0.407"
         tools:ignore="MissingConstraints" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="35dp" />
-
     <ImageView
         android:id="@+id/perfil"
         android:layout_width="105dp"
@@ -194,8 +182,7 @@
         app:layout_constraintEnd_toEndOf="@+id/borda_perfil"
         app:layout_constraintStart_toStartOf="@+id/borda_perfil"
         app:layout_constraintTop_toTopOf="@+id/borda_perfil"
-        app:srcCompat="@drawable/icon_perfil"
-        />
+        app:srcCompat="@drawable/icon_perfil" />
 
     <ImageView
         android:id="@+id/olho"
