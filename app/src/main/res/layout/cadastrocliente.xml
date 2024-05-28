@@ -58,7 +58,7 @@
         app:srcCompat="@drawable/screenshot_29_removebg_preview" />
 
     <EditText
-        android:id="@+id/Namecompleto"
+        android:id="@+id/Nome"
         android:layout_width="310dp"
         android:layout_height="70dp"
         android:layout_marginTop="18dp"
@@ -74,7 +74,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/Numerodetelefone"
+        android:id="@+id/telefone"
         android:layout_width="310dp"
         android:layout_height="70dp"
         android:layout_marginTop="18dp"
