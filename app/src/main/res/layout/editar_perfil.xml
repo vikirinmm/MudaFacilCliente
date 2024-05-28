@@ -85,7 +85,7 @@
         app:srcCompat="@drawable/perfil_branco" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/Nome"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_marginTop="20dp"
@@ -100,7 +100,7 @@
         app:layout_constraintTop_toBottomOf="@+id/borda_perfil" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/telefone"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_marginTop="20dp"
@@ -113,10 +113,10 @@
         app:layout_constraintEnd_toEndOf="@+id/menu"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="@+id/menu"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintTop_toBottomOf="@+id/Nome" />
 
     <EditText
-        android:id="@+id/editTextText4"
+        android:id="@+id/email"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_marginTop="20dp"
@@ -128,7 +128,7 @@
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/menu"
         app:layout_constraintStart_toStartOf="@+id/menu"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+        app:layout_constraintTop_toBottomOf="@+id/telefone" />
 
     <EditText
         android:id="@+id/senha"
@@ -143,7 +143,7 @@
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/menu"
         app:layout_constraintStart_toStartOf="@+id/menu"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <ImageView
         android:id="@+id/olho1"

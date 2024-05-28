@@ -40,7 +40,7 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="416dp"
+        android:layout_width="match_parent"
         android:layout_height="46dp"
         android:background="@drawable/cabecalhobaixo"
         app:layout_constraintBottom_toBottomOf="parent"

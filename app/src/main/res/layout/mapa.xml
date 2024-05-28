@@ -90,20 +90,18 @@
 
         <View
             android:id="@+id/menu"
-            android:layout_width="375dp"
-            android:layout_height="340dp"
+            android:layout_width="380dp"
+            android:layout_height="287dp"
+            android:layout_marginTop="12dp"
             android:background="@drawable/recentes"
-            app:layout_constraintBottom_toBottomOf="@+id/menu_azul"
             app:layout_constraintEnd_toEndOf="@+id/menu_azul"
-            app:layout_constraintStart_toStartOf="@+id/menu_azul"
-            app:layout_constraintTop_toTopOf="@+id/menu_azul"
-            tools:layout_editor_absoluteX="13dp"
-            tools:layout_editor_absoluteY="535dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/menu_azul" />
 
         <View
             android:id="@+id/bloco_menu1"
-            android:layout_width="350dp"
-            android:layout_height="80dp"
+            android:layout_width="349dp"
+            android:layout_height="69dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/recentes"
             app:layout_constraintEnd_toEndOf="@+id/menu"
@@ -112,22 +110,21 @@
 
         <View
             android:id="@+id/bloco_menu2"
-            android:layout_width="350dp"
-            android:layout_height="105dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="347dp"
+            android:layout_height="84dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/recentes"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/menu_azul"
+            app:layout_constraintEnd_toEndOf="@+id/menu"
+            app:layout_constraintStart_toStartOf="@+id/menu"
             app:layout_constraintTop_toBottomOf="@+id/bloco_menu1" />
 
         <View
             android:id="@+id/bloco_menu3"
-            android:layout_width="350dp"
-            android:layout_height="110dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="348dp"
+            android:layout_height="93dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/recentes"
             app:layout_constraintEnd_toEndOf="@+id/menu"
-            app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="@+id/menu"
             app:layout_constraintTop_toBottomOf="@+id/bloco_menu2" />
 
@@ -146,21 +143,19 @@
         <TextView
             android:id="@+id/endereco"
             android:layout_width="340dp"
-            android:layout_height="80dp"
+            android:layout_height="68dp"
             android:gravity="center"
             android:text="Endereço"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@+id/bloco_menu2"
             app:layout_constraintEnd_toEndOf="@+id/bloco_menu2"
-            app:layout_constraintHorizontal_bias="0.478"
             app:layout_constraintStart_toStartOf="@+id/bloco_menu2"
-            app:layout_constraintTop_toTopOf="@+id/bloco_menu2"
-            app:layout_constraintVertical_bias="0.52" />
+            app:layout_constraintTop_toTopOf="@+id/bloco_menu2" />
 
         <TextView
             android:id="@+id/extras"
-            android:layout_width="340dp"
-            android:layout_height="88dp"
+            android:layout_width="330dp"
+            android:layout_height="73dp"
             android:gravity="center"
             android:text="extras"
             android:textColor="@color/black"
