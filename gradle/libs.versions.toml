@@ -15,6 +15,7 @@ lifecycleLivedataKtx = "2.7.0"
 lifecycleViewmodelKtx = "2.7.0"
 playServicesLocation = "21.2.0"
 googleMapsServices = "0.10.0"
+googleAndroidLibrariesMapsplatformSecretsGradlePlugin = "2.0.1"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -35,3 +36,4 @@ play-services-location = { group = "com.google.android.gms", name = "play-servic
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
+googleAndroidLibrariesMapsplatformSecretsGradlePlugin = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "googleAndroidLibrariesMapsplatformSecretsGradlePlugin" }

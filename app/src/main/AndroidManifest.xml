@@ -17,60 +17,72 @@
         android:theme="@style/Theme.Mudafacil"
         tools:targetApi="31" >
 
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDyiYidbmdA3G4E2cu-q1kZGd9dxZG0HGs"/>
+            android:value="YOUR_API_KEY" />
 
         <activity
-            android:name=".Recuperacao_de_senha_3"
+            android:name=".Recuperacao_de_senha.Recuperacao_de_senha_3"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Recuperacao_de_senha_2"
+            android:name=".Recuperacao_de_senha.Recuperacao_de_senha_2"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Recuperacao_de_senha_1"
+            android:name=".Recuperacao_de_senha.Recuperacao_de_senha_1"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Cadastro_Cliente"
+            android:name=".Cadastro_Cliente.Cadastro_Cliente"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Login"
+            android:name=".login.Login"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Pagamentos"
+            android:name=".pagamentos.Pagamentos"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Opcao_Veiculos"
+            android:name=".Opcao_veiculos.Opcao_Veiculos"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Servico"
+            android:name=".servico.Servico"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".EditarPerfil"
+            android:name=".EditarPerfil.EditarPerfil"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Mapa"
+            android:name=".Mapa.Mapa"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Mapa_trajeto"
+            android:name=".Mapa_trajeto.Mapa_trajeto"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TelaPrincipal"
+            android:name=".tela_principal.TelaPrincipal"
             android:exported="true"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

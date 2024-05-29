@@ -91,7 +91,7 @@
         <View
             android:id="@+id/menu"
             android:layout_width="380dp"
-            android:layout_height="287dp"
+            android:layout_height="296dp"
             android:layout_marginTop="12dp"
             android:background="@drawable/recentes"
             app:layout_constraintEnd_toEndOf="@+id/menu_azul"
@@ -101,7 +101,7 @@
         <View
             android:id="@+id/bloco_menu1"
             android:layout_width="349dp"
-            android:layout_height="69dp"
+            android:layout_height="72dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/recentes"
             app:layout_constraintEnd_toEndOf="@+id/menu"
@@ -111,7 +111,7 @@
         <View
             android:id="@+id/bloco_menu2"
             android:layout_width="347dp"
-            android:layout_height="84dp"
+            android:layout_height="82dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/recentes"
             app:layout_constraintEnd_toEndOf="@+id/menu"
@@ -121,7 +121,7 @@
         <View
             android:id="@+id/bloco_menu3"
             android:layout_width="348dp"
-            android:layout_height="93dp"
+            android:layout_height="94dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/recentes"
             app:layout_constraintEnd_toEndOf="@+id/menu"
@@ -130,8 +130,8 @@
 
         <TextView
             android:id="@+id/chamar"
-            android:layout_width="340dp"
-            android:layout_height="56dp"
+            android:layout_width="330dp"
+            android:layout_height="52dp"
             android:gravity="center"
             android:text="Chamar"
             android:textColor="@color/black"
@@ -142,7 +142,7 @@
 
         <TextView
             android:id="@+id/endereco"
-            android:layout_width="340dp"
+            android:layout_width="330dp"
             android:layout_height="68dp"
             android:gravity="center"
             android:text="Endereço"

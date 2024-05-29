@@ -6,7 +6,7 @@
     android:background="#EBEBEB"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cadastro_Cliente">
+    tools:context=".Cadastro_Cliente.Cadastro_Cliente">
 
     <View
         android:id="@+id/menu"
