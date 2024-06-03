@@ -2,6 +2,7 @@ package com.example.mudafacil.Cadastro_Cliente;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,27 +45,31 @@ public class Cadastro_Cliente extends AppCompatActivity {
         cadastra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                User user = new User(nome.getText().toString(), telefone.getText().toString(), email.getText().toString(), senha.getText().toString());
-                ApiService apiService = ApiClient.getClient().create(ApiService.class);
-                Call<User> call = apiService.registerUser(user);
+                if (isEmailValid(email.getText().toString())) {
+                    User user = new User(nome.getText().toString(), telefone.getText().toString(), email.getText().toString(), senha.getText().toString());
+                    ApiService apiService = ApiClient.getClient().create(ApiService.class);
+                    Call<User> call = apiService.registerUser(user);
 
-                call.enqueue(new Callback<User>() {
-                    @Override
-                    public void onResponse(Call<User> call, Response<User> response) {
-                        if (response.isSuccessful()) {
-                            Toast.makeText(Cadastro_Cliente.this, "Usuário cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
-                            Intent main = new Intent(Cadastro_Cliente.this, Login.class);
-                            startActivity(main);
-                        } else {
-                            Toast.makeText(Cadastro_Cliente.this, "Erro ao cadastrar usuário!", Toast.LENGTH_SHORT).show();
+                    call.enqueue(new Callback<User>() {
+                        @Override
+                        public void onResponse(Call<User> call, Response<User> response) {
+                            if (response.isSuccessful()) {
+                                Toast.makeText(Cadastro_Cliente.this, "Usuário cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
+                                Intent main = new Intent(Cadastro_Cliente.this, Login.class);
+                                startActivity(main);
+                            } else {
+                                Toast.makeText(Cadastro_Cliente.this, "Erro ao cadastrar usuário!", Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
 
-                    @Override
-                    public void onFailure(Call<User> call, Throwable t) {
-                        Toast.makeText(Cadastro_Cliente.this, "Falha na comunicação com o servidor!", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                        @Override
+                        public void onFailure(Call<User> call, Throwable t) {
+                            Toast.makeText(Cadastro_Cliente.this, "Falha na comunicação com o servidor!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                } else {
+                    Toast.makeText(Cadastro_Cliente.this, "E-mail inválido!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -76,5 +81,9 @@ public class Cadastro_Cliente extends AppCompatActivity {
                 startActivity(main);
             }
         });
+    }
+
+    private boolean isEmailValid(String email) {
+        return Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 }
