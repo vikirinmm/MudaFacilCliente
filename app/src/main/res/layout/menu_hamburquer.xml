@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="240dp"
+    android:layout_width="190dp"
     android:layout_height="wrap_content"
     android:background="#F1F1F1"
     android:orientation="vertical"
@@ -34,7 +34,7 @@
         android:id="@+id/servico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:textColorHint="@color/black"
         android:textColor="@color/black"
         android:text="Serviço"
@@ -50,7 +50,7 @@
         android:id="@+id/pagamentos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:textSize="20sp"
         android:text="Pagamentos"
         android:textColorHint="@color/black"
@@ -65,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:text="Editar Perfil"
         android:textColorHint="@color/black"
         android:textColor="@color/black"
@@ -78,7 +78,7 @@
         android:id="@+id/sair"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:textSize="20sp"
         android:text="Sair"
         android:textColor="@color/black"
@@ -90,39 +90,42 @@
 
     <View
         android:id="@+id/linha2"
-        android:layout_width="200dp"
+        android:layout_width="175dp"
         android:layout_height="4dp"
-        android:layout_marginBottom="50dp"
+
         android:background="@drawable/linha"
         app:layout_constraintBottom_toTopOf="@+id/pagamentos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/servico" />
 
     <View
         android:id="@+id/linha3"
-        android:layout_width="200dp"
+        android:layout_width="175dp"
         android:layout_height="4dp"
-        android:layout_marginBottom="50dp"
+
         android:background="@drawable/linha"
         app:layout_constraintBottom_toTopOf="@+id/editar_perfil"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pagamentos" />
 
     <View
         android:id="@+id/linha4"
-        android:layout_width="200dp"
+        android:layout_width="175dp"
         android:layout_height="4dp"
-        android:layout_marginBottom="50dp"
+
         android:background="@drawable/cabecalho"
         app:layout_constraintBottom_toTopOf="@+id/sair"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editar_perfil" />
 
     <View
         android:id="@+id/linha5"
-        android:layout_width="200dp"
+        android:layout_width="175dp"
         android:layout_height="4dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/cabecalho"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -130,12 +133,12 @@
 
     <View
         android:id="@+id/linha1"
-        android:layout_width="200dp"
+        android:layout_width="175dp"
         android:layout_height="4dp"
-        android:layout_marginBottom="50dp"
         android:background="@drawable/cabecalho"
         app:layout_constraintBottom_toTopOf="@+id/servico"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/borda_perfil" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

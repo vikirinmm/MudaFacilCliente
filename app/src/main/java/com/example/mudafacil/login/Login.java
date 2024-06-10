@@ -9,21 +9,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.mudafacil.api.ApiClient;
-import com.example.mudafacil.api.ApiService;
 import com.example.mudafacil.Cadastro_Cliente.Cadastro_Cliente;
 import com.example.mudafacil.R;
 import com.example.mudafacil.Recuperacao_de_senha.Recuperacao_de_senha_1;
 import com.example.mudafacil.tela_principal.TelaPrincipal;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class Login extends AppCompatActivity {
 
@@ -59,36 +52,14 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        Button logar = (Button) findViewById(R.id.logar);
+        logar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LoginRequest loginRequest = new LoginRequest(email.getText().toString(), senha.getText().toString());
-                ApiService apiService = ApiClient.getClient().create(ApiService.class);
-                Call<LoginResponse> call = apiService.loginUser(loginRequest);
-
-                call.enqueue(new Callback<LoginResponse>() {
-                    @Override
-                    public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                        if (response.isSuccessful()) {
-                            String token = response.body().getToken();
-                            // Salvar o token e navegar
-                            Toast.makeText(Login.this, "Login realizado com sucesso!", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(Login.this, TelaPrincipal.class);
-                            intent.putExtra("token", token);
-                            startActivity(intent);
-                        } else {
-                            Toast.makeText(Login.this, "Email ou senha incorretos!", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<LoginResponse> call, Throwable t) {
-                        Toast.makeText(Login.this, "Falha na comunicação com o servidor!", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                Intent main = new Intent(Login.this, TelaPrincipal.class);
+                startActivity(main);
             }
         });
-
         TextView recuperar = findViewById(R.id.recuperarsenha);
         recuperar.setOnClickListener(new View.OnClickListener() {
             @Override

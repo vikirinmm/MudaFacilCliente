@@ -16,19 +16,17 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.mudafacil.R;
+import com.example.mudafacil.tela_principal.TelaPrincipal;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
-
-
-import androidx.recyclerview.widget.LinearLayoutManager;
-
-import com.example.mudafacil.R;
-import com.example.mudafacil.tela_principal.TelaPrincipal;
 
 
 public class Pagamentos extends AppCompatActivity {
@@ -74,33 +72,32 @@ public class Pagamentos extends AppCompatActivity {
 
 
 
-        //combobox
+        // combobox
         Spinner spinner = findViewById(R.id.spinner);
 
-        // Lista de itens que serão exibidos no ComboBox
+// Lista de itens que serão exibidos no ComboBox
         List<String> items = new ArrayList<>();
         items.add("Selecione");
         items.add("Item 2");
         items.add("Item 3");
         items.add("Item 4");
 
-        // Criar um ArrayAdapter usando a lista de itens
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items);
+// Criar um ArrayAdapter usando a lista de itens
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_item, items);
 
-        // Especificar o layout a ser usado quando a lista de opções aparecer
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Especificar o layout a ser usado quando a lista de opções aparecer
+        adapter.setDropDownViewResource(R.layout.spinner_item);
 
-        // Aplicar o adapter ao spinner
+// Aplicar o adapter ao spinner
         spinner.setAdapter(adapter);
 
-        // Adicionar um listener para capturar a seleção do usuário
+// Adicionar um listener para capturar a seleção do usuário
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 // Obtém o item selecionado
                 String selectedItem = parent.getItemAtPosition(position).toString();
-
-
+                // Realiza a ação desejada com o item selecionado
             }
 
             @Override
@@ -108,7 +105,8 @@ public class Pagamentos extends AppCompatActivity {
                 // Faz algo caso nada seja selecionado
             }
         });
-        //combobox
+// combobox
+
 
 
 
