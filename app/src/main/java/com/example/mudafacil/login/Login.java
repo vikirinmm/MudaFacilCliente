@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +17,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.mudafacil.Cadastro_Cliente.Cadastro_Cliente;
 import com.example.mudafacil.R;
 import com.example.mudafacil.Recuperacao_de_senha.Recuperacao_de_senha_1;
-import com.example.mudafacil.tela_principal.TelaPrincipal;
+import com.example.mudafacil.api.HttpUtil;
+import com.example.mudafacil.api.model.LoginData;
+
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 public class Login extends AppCompatActivity {
 
@@ -56,8 +64,29 @@ public class Login extends AppCompatActivity {
         logar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent main = new Intent(Login.this, TelaPrincipal.class);
-                startActivity(main);
+               String emailString=email.getText().toString();
+               String Password=senha.getText().toString();
+                LoginData loginData=new LoginData(emailString,Password);
+                HttpUtil httpUtil=new HttpUtil();
+                httpUtil.loginUser(loginData, new Callback() {
+
+                                    @Override
+                                    public void onFailure(Call call, IOException e) {
+                                        e.getStackTrace();
+                                        Log.e("Erro","ao solicitar o serviço solicitado");
+                                    }
+
+                                    @Override
+                                    public void onResponse(Call call, Response response) throws IOException {
+                                        String responseBody=response.body().string();
+                                        if(response.isSuccessful()){
+                                            Log.i("Sucesso","Usuario Criado com sucesso");
+                                        }else {
+                                            Log.i("Erro","Erro na reposta"+responseBody);
+                                        }
+
+                                    }
+                                });
             }
         });
         TextView recuperar = findViewById(R.id.recuperarsenha);

@@ -83,6 +83,7 @@ public class EditarPerfil extends AppCompatActivity {
         });
         Button myButton = findViewById(R.id.editar);
         myButton.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 showConfirmationDialog();
@@ -104,6 +105,7 @@ public class EditarPerfil extends AppCompatActivity {
         confirmButton.setOnClickListener(v -> {
             Toast.makeText(EditarPerfil.this, "Ação confirmada!", Toast.LENGTH_SHORT).show();
             dialog.dismiss();
+
         });
 
         Button cancelButton = customView.findViewById(R.id.dialog_btn_cancel);

@@ -30,7 +30,9 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
 }
+
 
 dependencies {
     implementation(libs.appcompat)
@@ -48,11 +50,15 @@ dependencies {
     implementation(libs.play.services.maps)
     implementation(libs.google.maps.services)
 
-    // Adicionando dependências Retrofit e Gson
+
+    // Adicionando dependência do Google Play Services Ads
+
+
+    implementation ("com.android.volley:volley:1.2.1")
+
+
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.google.code.gson:gson:2.8.8")
-
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
