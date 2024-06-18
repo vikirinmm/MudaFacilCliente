@@ -60,6 +60,11 @@ public class TelaPrincipal extends AppCompatActivity implements OnMapReadyCallba
         EdgeToEdge.enable(this);
         setContentView(R.layout.tela_principal);
 
+        Intent intent = getIntent();
+        String userToken = intent.getStringExtra("USER_TOKEN");
+
+
+
         ImageView pesquisar = findViewById(R.id.lupa);
         pesquisar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,6 +142,7 @@ public class TelaPrincipal extends AppCompatActivity implements OnMapReadyCallba
             @Override
             public void onClick(View v) {
                 Intent logoutIntent = new Intent(TelaPrincipal.this, EditarPerfil.class);
+                logoutIntent.putExtra("USER_TOKEN",userToken);
                 logoutIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(logoutIntent);
             }

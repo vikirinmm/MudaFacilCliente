@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +20,7 @@ import com.example.mudafacil.R;
 import com.example.mudafacil.Recuperacao_de_senha.Recuperacao_de_senha_1;
 import com.example.mudafacil.api.connectionFactory;
 import com.example.mudafacil.api.model.LoginData;
+import com.example.mudafacil.tela_principal.TelaPrincipal;
 
 import java.io.IOException;
 
@@ -81,8 +83,12 @@ public class Login extends AppCompatActivity {
                         Log.d("UserLogin", "Response: " + responseBody);
                         if (response.isSuccessful()) {
                             Log.i("UserLogin", "User logged in successfully");
+                            Intent main = new Intent(Login.this, TelaPrincipal.class);
+                            main.putExtra("USER_TOKEN", responseBody);
+                            startActivity(main);
                         } else {
                             Log.i("UserLogin", "Error in response: " + responseBody);
+                            Toast.makeText(Login.this, "email ou senha incorreta", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

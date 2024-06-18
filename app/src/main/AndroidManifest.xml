@@ -52,7 +52,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".login.Login"
+            android:name=".tela_principal.TelaPrincipal"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
@@ -80,7 +80,7 @@
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".tela_principal.TelaPrincipal"
+            android:name=".login.Login"
             android:exported="true"
             android:screenOrientation="portrait" >
             <intent-filter>
