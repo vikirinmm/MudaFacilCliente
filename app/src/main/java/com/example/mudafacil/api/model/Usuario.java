@@ -1,7 +1,6 @@
 package com.example.mudafacil.api.model;
 
 public class Usuario {
-    private String Id;
     private String nome;
     private String email;
     private String telefone;
@@ -39,16 +38,7 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public String getId() {
-        return Id;
-    }
-
-    public void setId(String id) {
-        Id = id;
-    }
-
-    public Usuario(String id, String nome, String email, String telefone, String senha) {
-        Id = id;
+    public Usuario(String nome, String email, String telefone, String senha) {
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;

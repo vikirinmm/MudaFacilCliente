@@ -29,9 +29,9 @@ public class connectionFactory {
     }
 
     public static void getUserByID(Usuario usuario,Callback callback){
-        String json=String.format("{\"ID\":\"%s\"}",usuario.getId());
+        String json=String.format("{\"ID\":\"%s\"}");
         RequestBody body=RequestBody.create(JSON,json);
-        Request request=new Request.Builder().url(BASE_URL+"ID/"+usuario.getId()).post(body).build();
+        Request request=new Request.Builder().url(BASE_URL+"ID/").post(body).build();
         client.newCall(request).enqueue(callback);
     }
     public void delete(String id,Callback callback){

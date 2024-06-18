@@ -71,7 +71,7 @@
         android:layout_marginTop="8dp"
         android:backgroundTint="#3473D2"
         android:ems="10"
-        android:hint="Name"
+        android:hint="Email"
         android:inputType="text"
         android:textColor="@color/black"
         android:textColorHint="@color/black"

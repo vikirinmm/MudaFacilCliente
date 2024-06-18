@@ -16,6 +16,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mudafacil.Cadastro_Cliente.Cadastro_Cliente;
+import com.example.mudafacil.EditarPerfil.EditarPerfil;
 import com.example.mudafacil.R;
 import com.example.mudafacil.Recuperacao_de_senha.Recuperacao_de_senha_1;
 import com.example.mudafacil.api.connectionFactory;
@@ -87,8 +88,13 @@ public class Login extends AppCompatActivity {
                             main.putExtra("USER_TOKEN", responseBody);
                             startActivity(main);
                         } else {
-                            Log.i("UserLogin", "Error in response: " + responseBody);
-                            Toast.makeText(Login.this, "email ou senha incorreta", Toast.LENGTH_SHORT).show();
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(Login.this, "Email ou senha incorreto!", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
                         }
                     }
                 });

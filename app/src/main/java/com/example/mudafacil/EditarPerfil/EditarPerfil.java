@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -25,6 +26,7 @@ public class EditarPerfil extends AppCompatActivity {
     private EditText emailuser;
     private EditText senhauser;
     private EditText comfirmarsenha;
+    private TextView del;
     private ImageView visivil1;
     private ImageView visivil2;
     private boolean pontos1 = false;
@@ -130,6 +132,14 @@ public class EditarPerfil extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showConfirmationDialog();
+            }
+        });
+        del = findViewById(R.id.deletar);
+        del.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                showdeletarDialog();
             }
         });
     }
