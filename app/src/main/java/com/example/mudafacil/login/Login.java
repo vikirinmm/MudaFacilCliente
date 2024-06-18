@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.mudafacil.Cadastro_Cliente.Cadastro_Cliente;
 import com.example.mudafacil.R;
 import com.example.mudafacil.Recuperacao_de_senha.Recuperacao_de_senha_1;
-import com.example.mudafacil.api.HttpUtil;
+import com.example.mudafacil.api.connectionFactory;
 import com.example.mudafacil.api.model.LoginData;
 
 import java.io.IOException;
@@ -59,36 +59,35 @@ public class Login extends AppCompatActivity {
                 senha.setSelection(senha.getText().length());
             }
         });
-
-        Button logar = (Button) findViewById(R.id.logar);
-        logar.setOnClickListener(new View.OnClickListener() {
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               String emailString=email.getText().toString();
-               String Password=senha.getText().toString();
-                LoginData loginData=new LoginData(emailString,Password);
-                HttpUtil httpUtil=new HttpUtil();
-                httpUtil.loginUser(loginData, new Callback() {
+                Log.d("UserLogin", "Login button clicked");
+                String emailString = email.getText().toString();
+                String passwordString = senha.getText().toString();
+                Log.d("UserLogin", "Email: " + emailString + ", Password: " + passwordString);
 
-                                    @Override
-                                    public void onFailure(Call call, IOException e) {
-                                        e.getStackTrace();
-                                        Log.e("Erro","ao solicitar o serviço solicitado");
-                                    }
+                LoginData loginData = new LoginData(emailString, passwordString);
+                connectionFactory.loginUser(loginData, new Callback() {
 
-                                    @Override
-                                    public void onResponse(Call call, Response response) throws IOException {
-                                        String responseBody=response.body().string();
-                                        if(response.isSuccessful()){
-                                            Log.i("Sucesso","Usuario Criado com sucesso");
-                                        }else {
-                                            Log.i("Erro","Erro na reposta"+responseBody);
-                                        }
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+                        Log.e("UserLogin", "Failed to make the request", e);
+                    }
 
-                                    }
-                                });
-            }
-        });
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+                        String responseBody = response.body().string();
+                        Log.d("UserLogin", "Response: " + responseBody);
+                        if (response.isSuccessful()) {
+                            Log.i("UserLogin", "User logged in successfully");
+                        } else {
+                            Log.i("UserLogin", "Error in response: " + responseBody);
+                        }
+                    }
+                });
+         }
+});
         TextView recuperar = findViewById(R.id.recuperarsenha);
         recuperar.setOnClickListener(new View.OnClickListener() {
             @Override

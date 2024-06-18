@@ -12,7 +12,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mudafacil.R;
-import com.example.mudafacil.api.HttpUtil;
+import com.example.mudafacil.api.connectionFactory;
 import com.example.mudafacil.api.model.Usuario;
 import com.example.mudafacil.login.Login;
 
@@ -49,8 +49,8 @@ public class Cadastro_Cliente extends AppCompatActivity {
             String email = ((EditText) findViewById(R.id.email)).getText().toString();
             String senha = ((EditText) findViewById(R.id.senha)).getText().toString();
             Usuario user=new Usuario(nome,email,telefone,senha);
-            HttpUtil httpUtil=new HttpUtil();
-            httpUtil.post(user, new Callback() {
+            connectionFactory connectionFactory =new connectionFactory();
+            connectionFactory.post(user, new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
                     e.getStackTrace();
@@ -72,6 +72,7 @@ public class Cadastro_Cliente extends AppCompatActivity {
             });
 
         });
+
         ImageView voltar = findViewById(R.id.voltar);
         voltar.setOnClickListener(new View.OnClickListener() {
             @Override

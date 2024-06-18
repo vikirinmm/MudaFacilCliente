@@ -26,10 +26,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mudafacil.EditarPerfil.EditarPerfil;
 import com.example.mudafacil.Mapa.Mapa;
-import com.example.mudafacil.pagamentos.Pagamentos;
 import com.example.mudafacil.R;
-import com.example.mudafacil.servico.Servico;
 import com.example.mudafacil.login.Login;
+import com.example.mudafacil.pagamentos.Pagamentos;
+import com.example.mudafacil.servico.Servico;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
