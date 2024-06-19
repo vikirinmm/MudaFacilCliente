@@ -27,23 +27,8 @@ public class connectionFactory {
         Request request=new Request.Builder().url(BASE_URL+"login").post(body).build();
         client.newCall(request).enqueue(callback);
     }
-
-    public static void getUserByID(Usuario usuario,Callback callback){
-        String json=String.format("{\"ID\":\"%s\"}");
-        RequestBody body=RequestBody.create(JSON,json);
-        Request request=new Request.Builder().url(BASE_URL+"ID/").post(body).build();
-        client.newCall(request).enqueue(callback);
-    }
-    public void delete(String id,Callback callback){
-        String json=String.format(("{\"id\":\"%s\"}"),id);
-        RequestBody body=RequestBody.create(JSON,json);
-    }
-
-
-    private static final String BASE_Veichle_URL = "http://ec2-54-207-53-35.sa-east-1.compute.amazonaws.com:8080/api/v1/vehicle/";
-
-    public static void getAllVehicles(Callback callback) {
-        Request request = new Request.Builder().url(BASE_Veichle_URL).get().build();
+    public static void delete(String id, Callback callback) {
+        Request request = new Request.Builder().url(BASE_URL + "delete/" + id).delete().build();
         client.newCall(request).enqueue(callback);
     }
 }
